@@ -35,6 +35,7 @@ by this, I came to learn more about Animation libraries not to mention Styled-co
 - Contact Me
 
 # Sample pictures
+![p6](https://user-images.githubusercontent.com/106279616/222976680-c2526718-53ef-473d-91e0-9bb7c46f5961.png)
 
 # Sample videos
 
