@@ -95,7 +95,7 @@
         "id":5,
         "cover":"https://user-images.githubusercontent.com/106279616/222976680-c2526718-53ef-473d-91e0-9bb7c46f5961.png",
         "title":"Yeonghwan's Portfolio",
-        "tools":["React","JavaScript","CSS","Styled-components","Vite","Framer-motion","Gsap","react-three","React-lottie-player","Scroll-out","react-chartjs-2","PhotoShop","Pigma"],
+        "tools":["React","JavaScript","CSS","Styled-components","Vite","Framer-motion","Gsap","react-three","React-lottie-player","Scroll-out","react-chartjs-2","emailjs","PhotoShop","Pigma"],
         "loginMust": "X",
         "idea_clone":["90%","10%"],
         "ratio":[90,10],
