@@ -1,0 +1,113 @@
+[
+    {
+        "id":0,
+        "cover":"https://user-images.githubusercontent.com/106279616/219403814-8c0b191d-b018-453e-ae8b-bf70a7adfaa9.png",
+        "title":"Facebook clone",
+        "tools":["Django","Python","Html","CSS","Bootstrap","Jquery","Beautifulsoup"],
+        "loginMust": "O (Sign-up)",
+        "idea_clone":["10% (Crawling with Beautifulsoup and making News)", "90% (some of Instagram tutorial code and referance to Facebook UI, UX)"],
+        "ratio":[10,90],
+        "function":["Navbar", "Feed", "Feed upload (text, pic, text and pic)","Feed like (likeicon, likecount)","Comment","Comment like","Comment's comment","Feed modify","Feed delete (data delete)","Feed hide (data exist)","Feed share","News (Beautiful soup(realtime news)","News Search","Login, Logout, Signup"],
+        "nameWhy": null,
+        "hardPart":[
+            "while implementing likes-function, I used to fix 'model' file many time, as many 'MVC' developers well know, model file is very sensitive since it's about Database, one day in the middle of deleting and migrating datas back and force, 'migrate' was not working at all in error 'no such table', so it makes me wasting a lot of time, thankfuly I've got the solution which is 'py manage.py migrate --run-syncdb' that makes Datebase table once again, I don't know if it is difficult error to django developer or not, but back then I found it hard as I made it as 1st self-project without any help from others.",
+            "basically Django and Jquery are not for SPA, so it was really hard to conceive all the logics to implement 'likes number' that is changed in real time without moving on different page, so I did legwork going thru all the trials and errors repetively comparing likes-numbers that is input in real time and that is saved in database.",
+            "while implementing auth part and saving user-info in Database, I continually failed to log in since encrypted-password and input-password were not matched, but I found that if I use formdata-method when password datas is sent from client to server with encryption, that password is manipulated to totaly diferent one that doesn't recognize encryption. so I used it to Json-method plus insted of using ajax, I used just form tag to send to server so I came to solve the error. it took me almost entire 2 days to find solution."],
+        "thingsToFix": "need to get this clean code, better English-comment's grammer, replace success, error, complete in ajax about 'console log'.",
+        "description":"This is Facebook clone page that I built by refering to orginal Facebook web site.",
+        "url":null,
+        "githubUrl":"https://github.com/johnpark144/Facebook_clone_project--Django"
+    },
+    {
+        "id":1,
+        "cover":"https://user-images.githubusercontent.com/106279616/219403876-61877351-916f-44b1-84fd-b2c8a5ed78ee.png",
+        "title":"MYabc",
+        "tools":["React","JavaScript","CSS","Tailwind","FireBase","Dictionary API","Youglish API","Grammarly API","PhotoShop"],
+        "loginMust": "O (Sign-up or Oauth)",
+        "idea_clone":["85%", "15% (referance to Vocabulary part)"],
+        "ratio":[85,15],
+        "function":["Responsive Website","Login, Logout, Signup","Login with Google, GitHub, FaceBook (Oauth)","Navigation bar and Modal(Small Navigation bar)","404 Notfound link","Animation, Transition and Design in Home","PlaceHolder Loading","Add and Remove Days","Add and Remove Words","Hide and Show Words (to memorize vocabulary)","Gray row (When memorized words)","Move link day to day","Eng/Eng Dictionary","Youtube Video for study (to check vocabulary frequency and context)","Save word watching video","Grammar Check"],
+        "nameWhy": "'ABC' is begining of Alphabet but that sometimes indicate begining of English study so I named it MYabc.",
+        "hardPart":[
+            "because of limit to call API a day, I used to fail to test after some time to test. so I've learn how to test effeciently.",
+            "implementing Modal to do 'delete or cancel', whenever I click 'delete', sadly only last data had been deleted.. but I found solution that I put the Modal-making-component inside of the map-function that spread array. so now that I click to set the Modal, the Modal of that data to delete comes out."],
+        "thingsToFix": "need to get this clean code, better English-comment's grammer, Implement more function for better way of Engish study.",
+        "description":"This is English study website named 'MYabc' that I built to use usefully for those who need it including myself. When I came to states for the first time, I found it hard to do everything due to language barrier. I remember how my English get improved going through many trials and errors, that is studying context of frequent word and sentences, and also checking meaning of words in English was helpfull a lot to feel the true meaning, that's why I used to use Eng/Eng Dictionary and Youglish site in bookmark in actuality. retrospecting that time, I came to think that would be good to develop the website or application for English study based on my experience. and put them into practice. and I will also create this in app when I learn React Native later on.",
+        "url":"https://resilient-hummingbird-f7421f.netlify.app/",
+        "githubUrl":"https://github.com/johnpark144/MYabc_project--React_FireBase"
+    },
+    {
+        "id":2,
+        "cover":"https://user-images.githubusercontent.com/106279616/219403907-3a676f69-acba-41d0-97cc-40da712e5f29.png",
+        "title":"Stillsteal_Ecommerce",
+        "tools":["React","Django","JavaScript","Python","CSS","Tailwind","MySql","ContextApi","PhotoShop"],
+        "loginMust": "X (But There is function of auth)",
+        "idea_clone":["75%", "25% (referance to how other ecommerce sites look like and what function exist)"],
+        "ratio":[75,25],
+        "function":["Responsive Website","Login, Logout, Signup (you can also use without login)","TokenRefresh with JWT","Navigation bar and Navigation side bar","Add to cart, subtract from cart","Search","Past-searchlist(Local Storage) and delete","See cart in Product detail, Checkout, Cart in deferent form","Pagination","Number of posts to display per page","Possible with Sort by 1, 2, 3 beleow together","1 Sort by category","2 Sort by Price(lowest), Price(highest), Name(ASC), Name(DESC), Rate","3 Sort only less than certain price","Product detail","Checkout(no payment yet)","Image Animation and design (Home-product, AboutUs, sidebar)","Spinner Loading until Data is found"],
+        "nameWhy": "the reason why I named this site 'Stillsteal' is because when we see some nice product for the price, we say 'that's steal!', so in order to stress those are cheap always, I named 'stillsteal'.",
+        "hardPart":[
+            "While implementing Cart function, I realized 'Local storage' is needed, It was first time using that so I had a hard time with that at that time, especially Whenever I refresh the page, the storage was gone, It was because of typos on '[]', but now thankfuly I got used to it pretty much.",
+            "Whenever more and too much codes are required for subtle function than for core function of the website, I was debating if I have to implement or not many time.. but after all I did those such as 'moving into Detail page and back to Category page but showing the anchored spot remembering all the state on 'Sort By','Number of posts to display per page','pagination', etc' so because of these to be honest, my code would be so complicated and messy.. but by this I wanted to make 'better quality-web site' unlike just common 'To-do-list website'."],
+        "thingsToFix": "need to get this clean code, better English-comment's grammer, real-payment-function with card for ecommerce shopping, JWT-token (I need to study about more JWT-token).",
+        "description":" This is Ecommerce site that I create for practice, It's not technically clone, but I refer to some ecommerce sites only to think which function would be nice to implement.",
+        "url":"https://tangerine-cactus-bf8a95.netlify.app",
+        "githubUrl":"https://github.com/johnpark144/Stillsteal_Ecommerce_project--React_Django"
+    },
+    {
+        "id":3,
+        "cover":"https://user-images.githubusercontent.com/106279616/219403928-c3f245cd-1d76-4c53-8eef-b5e71657d024.png",
+        "title":"MyTube",
+        "tools":["Next JS","TypeScript","CSS","Tailwind","Reactquery","Redux(toolkit)","React-beautiful-dnd","Lodash debounce","React-timeago","Next-themes","YouTube Data API","YouTube rapidApi","PhotoShop"],
+        "loginMust": "X",
+        "idea_clone":["45%","55% (not the tutorial code at all, but only UI, UX)"],
+        "ratio":[45,55],
+        "function":["Responsive Website","Navigation bar(Header), Footer(for little width)","Home Animation(Explanation)","Search and Genre Video","Preview video When Mouse is over the thumbnail for 2 secs","History (Watch, Delete, Delete All)","Watch later (Watch, Delete)","Save and delete videos into Watch later with Drag & Drop","Save videos from video detail into Watch later and the Notification","Video Detail","Related Videos(from API), Other Videos(from the data before you click the video)","Channel Detail","Date(time) to Timeageo","Dark Mode","Spinner Loading, Animate-pulse Loading"],
+        "nameWhy": "the reason why I named this site 'MyTube' is because I focused to save viedos of youtube into 'watch later' of this site then those become my videos saved, on top of that, by this I came to figure out good idea of its logo.",
+        "hardPart":[
+            "I tried to build a website with Next js for the first time, and I saw Vercel is promoting 'Turbopack' a lot. so I used it but there are a lot of bug and error but not enough datas or informations about that. so I was wandering here and there and came to conclusion not to use Turbopack yet but Webpack.",
+            "Whenever I used any react hook or LINK, the error 'call is undefined' was happening continually, I struggled for about 2 days to fix it but no information had been found, but it turned out that it was error of latest version of that time of Next JS 13, so using the previous version was only solution until the error was corrected. (now the current version is ok, those are firxed thankfully).",
+            "When I deploy this web site in vercel, It continually failed, so I tried my best to fix it and googled it, but It was so vague search Results that are hard to find the solution. but I found that I typed the first letter of a directory's name as the uppercase letter that is supposed to be lowercase. It was not problem whatsoever in localhost but problem in deployment in vercel. so it was more hard time to dicover the problem.",
+            "overtime, due to frequent API call, Vercel blocked me out for no payment, so I moved it to 'Cloudtype' that is Korean deployment platform."],
+        "thingsToFix": "need to get this clean code, better design of 'Home'page (It was before I learn about usefull animation or CSS libraries).",
+        "description":"I have learned some useful skills to develop web sites such as Next JS, Redux, Reactquery, Darkmode, TypeScript, etc. I just wanted to practice all I learned by building this website, since I focused on skills, It would be way different from regular YouTube website so I want to say it is MyTube, and also by building that, I actually realized that some website like this doesn't fit with Server-Side-Renderling(SSR) but good enough with just React, so Building this website was the very instructive time to learn about deference between SSR, CSR, and even SSG, as well as skills that I learn and FYI In the middle of building this project, I found some similar tutorial lecture from Youtube building Youtube clone only using React not even NextJS. It's true that I refer to how the outcome of this tutorial looks like in the end of that video, but I didn't even watch that lecture at all other than ending part. so the code and the way to implement will be totally deferent.",
+        "url":"https://port-0-mytube-1jx7m2gldonqeix.gksl1.cloudtype.app/",
+        "githubUrl":"https://github.com/johnpark144/MyTube_project--Nextjs_TypeScript"
+    },
+    {
+        "id":4,
+        "cover":"https://user-images.githubusercontent.com/106279616/219403956-8a433da3-fbe0-4b95-b53a-0655dbf77261.png",
+        "title":"DoorToDoor",
+        "tools":["Next JS","TypeScript","CSS","Tailwind","Redux(toolkit)","FireBase","React-leaflet","Nominatim API","TileLayer","React-date-range","React-timeago","PhotoShop"],
+        "loginMust": "O (Only sign-up for personal-use)",
+        "idea_clone":["95%","5% (only some of how to use Nominatim API)"],
+        "ratio":[95,5],
+        "function":["Responsive Website","Auth (SignIn, Login, Logout)","Spinner Loading","Navigation bar(Header","Map (leaflet, OpenStreetMap)","Search Address and Locate a pin in the Map","Swicth Map (Regular, Satellite)","Edit Mode","Date pick from Calender and input the Date (Default : today)","Switch Marker Color (Blue marker or Green marker)","Putting marker on the Map and Save it","Cancel","Return","Popup on marker (Date, Timeago, Pointer's Name, Info that Pointer input)","Popup Edit Mode (Edit Detail Info, Delete Marker -> only In case of you being Pointer)","Marker opacity : over 6 month -> 0.6 / over 1 year -> 0.3 / over 2 year -> disapear"],
+        "nameWhy": "The meaning of 'door to door' has going around houses, so I named it for it fits the purpose of this web site and I came up with a good idea for the logo.",
+        "hardPart":[
+            "It was my first time to use map library and Api about geography, and I was worried about how to save latitude and longitude information in Firebase database. It took me a day to find out that there was a separate data storage format for latitude and longitude.",
+            "I found out that saving each datas every single time to click the locations is too frequent and inefficient. so I came to save them in array format. but in that sense, It was hard to input detail datas about that location and update and delete it, so the solution was putting all arrays in one array with latitude and longitude together and then using map-method to spread the array so that only user who input the latitude and longitude can create, update or delete."],
+        "thingsToFix": "need to get this clean code, better English-comment's grammer, Change the common password for personal use.",
+        "description":"I and My members used to do survey by door to door, Meanwhile I found it unconfortable that We unknowingly went to same house that someone already visited recently, so It was not reasonable at all but wasting time. on top of this, in the point of neighborhood, They also were not pleased on this neither, since they were bothered. so I first of all learned to handle Map and Calender and then came to build this web site for both end by my experience and idea, You can check markers that other visited and You can also marked and leave some comment. Marker will fade overtime, and disapear over 2years. and FYI Public Website's Common Password is '1948'.",
+        "url":"https://port-0-doortodoor-1jx7m2gldonqeix.gksl1.cloudtype.app/",
+        "githubUrl":"https://github.com/johnpark144/DoorToDoor_project--Nextjs_FireBase_TS"
+    },{
+        "id":5,
+        "cover":"https://user-images.githubusercontent.com/106279616/222976680-c2526718-53ef-473d-91e0-9bb7c46f5961.png",
+        "title":"Yeonghwan's Portfolio",
+        "tools":["React","JavaScript","CSS","Styled-components","Vite","Framer-motion","Gsap","react-three","React-lottie-player","Scroll-out","react-chartjs-2","PhotoShop","Pigma"],
+        "loginMust": "X",
+        "idea_clone":["90%","10%"],
+        "ratio":[90,10],
+        "function":null,
+        "nameWhy": null,
+        "hardPart":["Most Hart Part overall is implementing scroll-animation-effect in Responsive site with GSAP, Whenever window size is adjusted, the scroloo value also changed.. so I had to do all the math to find proper value with legwork.(ContactMe, MoonStarScroll, MyPath, Skills, Videos, Etc..) (time-consuming-process)",
+            "Of course, I had some part that I refered to from some other's portfolios, but I wantted to create most of it with my ideas. so, It was full of Pain of Creative mind... (time-consuming-process2)",
+            "While Buliding Email part and giving it scroll-animation, sometimes click didn't work on text-input but I found It was because I made SVG-Image to cover all background with the high value of Z-index initially, so It took time to find out the reason. but this error helpped me to have upgraded solving problem skill"
+        ],
+        "thingsToFix": "I will add Better and Nice Portolio soon!! (Plan : Reactnative, Jest, Graphql, AWS, Chart Libraries, Gsap in detail, Threejs in detail).",
+        "description":"This Site where you are now is what it is.",
+        "url":"#",
+        "githubUrl":"https://github.com/johnpark144/Portfolio_Website--React_FireBase"
+    }
+]
