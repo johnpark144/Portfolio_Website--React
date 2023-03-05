@@ -26,7 +26,13 @@ by this, I came to learn more about Animation libraries not to mention Styled-co
 - Date of deployment : 
 - Deployment Tool : 
 
-# Functions
+# Composition
+- About Me
+- Skills
+- Summary Videos
+- Portfolios (Simple Explanation, Site Link, Github-Code Link)
+- My Path
+- Contact Me
 
 # Sample pictures
 
