@@ -1,6 +1,6 @@
 # Portfolio_Website--React-on-going-
 
-- Website Link : 
+- Website Link : https://fancy-biscuit-0eb92d.netlify.app/
 
 - Creater : Yeonghwan Park (John Park)
 - Main Tools : React
@@ -23,8 +23,8 @@ by this, I came to learn more about Animation libraries not to mention Styled-co
 - Date of creation : Feb 10th ~ Mar 3rd 2023
 - Date of debugging : Mar 3rd ~ Mar 4rd 2023
 - Date of 1st upload : Mar 5th 2023
-- Date of deployment : 
-- Deployment Tool : 
+- Date of deployment : Mar 5th 2023
+- Deployment Tool : Netlify
 
 # Composition
 - About Me
