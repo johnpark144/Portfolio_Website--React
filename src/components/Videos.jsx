@@ -183,7 +183,7 @@ export default function Videos({ windowWidth }) {
         video4Elem,
         windowWidth > 768
           ? { scale: 0.3, y: "-10%" }
-          : { scale: 0.3, y: "10%" },
+          : { scale: 0.3 },
         "key1"
       )
       .to(video5Elem, { scale: 0.4, x: "-30%", y: "-20%" }, "key1")
