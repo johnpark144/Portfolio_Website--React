@@ -34,14 +34,6 @@ const Section = styled.section`
   font-family: "Tourney", cursive;
   overflow: visible;
 
-  @media screen and (max-width: 1024px) {
-    font-size: var(--fontsm);
-  }
-
-  @media screen and (max-width: 768px) {
-    font-size: var(--fontxs);
-  }
-
   & > div > p:nth-child(1) {
     position: relative;
     left: 100px;
@@ -58,6 +50,10 @@ const Section = styled.section`
       width: 100px;
       border-radius: 8px;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: var(--fontsm);
   }
 `;
 
@@ -83,6 +79,9 @@ const TextContainer = styled.p`
     height: 60px;
     letter-spacing: -2px;
   }
+
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 const TextContainer2 = styled.p`
@@ -106,6 +105,9 @@ const TextContainer2 = styled.p`
     margin: 20px;
     height: 60px;
     letter-spacing: -2px;
+  }
+
+  @media screen and (max-width: 480px) {
   }
 `;
 
