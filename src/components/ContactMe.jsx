@@ -259,7 +259,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
         : -900;
   } else {
     timelineValue =
-      windowHeight > 675 ? -2000 : windowHeight > 550 ? -2300 : -2600;
+      windowHeight > 675 ? -2000 : windowHeight > 550 ? -1800 : -2100;
   }
 
   // 스크롤
