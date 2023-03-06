@@ -23,16 +23,23 @@ const ChartContainer = styled.div`
 
   & > span {
     @media screen and (max-width: 1427px) {
-    width: 80%;
-  }
+      width: 80%;
+    }
     @media screen and (max-width: 625px) {
-    width: 60%;
-  }
+      width: 60%;
+    }
   }
 `;
 
 const Chart = styled(motion.div)`
-  width: ${({ selected, windowHeight }) => (selected ? "100px" : windowHeight >= 830 ? "180px" : windowHeight >= 761 ? "150px" : "110px")};
+  width: ${({ selected, windowHeight }) =>
+    selected
+      ? "100px"
+      : windowHeight >= 830
+      ? "180px"
+      : windowHeight >= 761
+      ? "150px"
+      : "110px"};
   height: 270px;
   margin-top: ${({ selected }) => (!selected ? "30px" : "")};
 
@@ -43,7 +50,12 @@ const Chart = styled(motion.div)`
 `;
 
 // 디폴트 함수
-export default function PortfoliosChart({ ratio, selected, idea_clone, windowHeight }) {
+export default function PortfoliosChart({
+  ratio,
+  selected,
+  idea_clone,
+  windowHeight,
+}) {
   const data = {
     labels: ["Idea", "Clone"],
     datasets: [
@@ -63,15 +75,15 @@ export default function PortfoliosChart({ ratio, selected, idea_clone, windowHei
   const options = {
     plugins: {
       legend: {
-          labels: {
-              font: {
-                  size: 9,
-              },
-              color: "#eeeeee",
-          }
-      }
-  }
-  }
+        labels: {
+          font: {
+            size: 9,
+          },
+          color: "#eeeeee",
+        },
+      },
+    },
+  };
 
   return (
     <ChartContainer>
