@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // 스타일
 const Svg = styled.svg`
-  width: calc(100vw - 50px);
+  width: 100%;
   height: 8000px;
   position: absolute;
   top: 0;
@@ -30,7 +30,6 @@ export default function MoonStarScroll({ windowHeight }) {
 
   return (
     <Svg
-      width="4968"
       height="20854"
       viewBox="0 0 4968 20854"
       fill="none"
