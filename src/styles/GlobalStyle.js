@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     /* outline: 1px solid red !important;  // 전체 프레임 생성 테스트용 */
 }
 
-body {
+html, body {
   width: 100%;
   overflow-x: hidden;
 }
