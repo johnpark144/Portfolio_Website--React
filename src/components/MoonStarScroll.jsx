@@ -9,7 +9,8 @@ const Svg = styled.svg`
   position: absolute;
   top: 0;
   left: 17px;
-
+  overflow: hidden;
+  
   @media screen and (max-width: 900px) {
     left: 35px;
   }
