@@ -17,8 +17,7 @@ import ContactMe from "./components/ContactMe";
 
 const PortfolioContainer = styled.div`
   background: ${({ backgroundColor }) => backgroundColor};
-  width: calc(100vw - 17px);
-  overflow-y: hidden;
+  overflow: hidden;
 `;
 
 function App() {
