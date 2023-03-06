@@ -1,7 +1,8 @@
 import { useLayoutEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import emailjs from "@emailjs/browser";
 import { Model } from "../assets/3d/Desktop_computer";
 import { Canvas } from "@react-three/fiber";
@@ -240,6 +241,8 @@ const Computer = styled.div`
 
 // 디폴트 함수
 export default function ContactMe({ windowWidth, windowHeight }) {
+  gsap.registerPlugin(ScrollTrigger);
+  
   const sectionRef = useRef(null);
   const contactMeRef = useRef(null);
   const formRef = useRef(null);
