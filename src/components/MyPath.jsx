@@ -78,8 +78,8 @@ const MyPathContainer = styled(motion.div)`
     font-size: ${({ windowHeight }) => windowHeight > 1400 ? "17px" : "13px"};
     letter-spacing: -1px;
   }
-  @media screen and (max-width: 384px) {
-    letter-spacing: -2px;
+  @media screen and (max-width: 400px) {
+    line-height: 14px;
   }
 `;
 
