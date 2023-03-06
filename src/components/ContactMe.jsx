@@ -105,6 +105,13 @@ const MyInfo = styled.div`
     width: 200px;
     height: 100px;
   }
+  @media screen and (max-width: 480px) {
+    position: relative;
+    left: 18px;
+    font-size: 12px;
+    width: 170px;
+    height: 70px;
+  }
 `;
 
 const Form = styled.form`
