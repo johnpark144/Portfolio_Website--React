@@ -291,7 +291,7 @@ export default function Portfolios({ windowHeight, windowWidth }) {
             viewport={{ once: true }}
             selected={selected}
           >
-            <span style={selected ? { height: "70vw" } : {}}>
+            <span style={selected ? windowWidth > 480 ? { height: "100vh" } : { height: "40vh" } : {}}>
               {/* 타이틀 */}
               <Title
                 whileInView={
