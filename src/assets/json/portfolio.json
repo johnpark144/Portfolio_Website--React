@@ -39,7 +39,7 @@
     {
         "id":2,
         "cover":"https://user-images.githubusercontent.com/106279616/219403907-3a676f69-acba-41d0-97cc-40da712e5f29.png",
-        "title":"Stillsteal_Ecommerce",
+        "title":"Stillsteal (Ecommerce)",
         "tools":["React","Django","JavaScript","Python","CSS","Tailwind","MySql","ContextApi","PhotoShop"],
         "loginMust": "X (But There is function of auth)",
         "idea_clone":["75%", "25% (referance to how other ecommerce sites look like and what function exist)"],
@@ -58,7 +58,7 @@
         "id":3,
         "cover":"https://user-images.githubusercontent.com/106279616/219403928-c3f245cd-1d76-4c53-8eef-b5e71657d024.png",
         "title":"MyTube",
-        "tools":["Next JS","TypeScript","CSS","Tailwind","Reactquery","Redux(toolkit)","React-beautiful-dnd","Lodash debounce","React-timeago","Next-themes","YouTube Data API","YouTube rapidApi","PhotoShop"],
+        "tools":["Next JS","TypeScript","CSS","Tailwind","Reactquery","Redux(toolkit)","React-beautiful-dnd","React-timeago","Next-themes","YouTube Data API","YouTube rapidApi"],
         "loginMust": "X",
         "idea_clone":["45%","55% (not the tutorial code at all, but only UI, UX)"],
         "ratio":[45,55],
