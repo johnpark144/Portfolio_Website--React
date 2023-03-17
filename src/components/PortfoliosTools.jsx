@@ -16,6 +16,9 @@ import {
   SiBootstrap,
   SiVite,
   SiMysql,
+  SiTestinglibrary,
+  SiJest,
+  SiCypress,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
@@ -71,6 +74,12 @@ export default function PortfoliosTools({ tool, idx, selected }) {
         <SiVite color="#c2a60b" />
       ) : tool === "MySql" ? (
         <SiMysql color="#0a0b6b" />
+      ) : tool === "RTL" ? (
+        <SiTestinglibrary color="#af0d0d" />
+      ) : tool === "Jest" ? (
+        <SiJest color="#772f19" />
+      ) : tool === "Cypress" ? (
+        <SiCypress color="#4a4a4e" />
       ) : selected ? (
         tool
       ) : (
