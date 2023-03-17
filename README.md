@@ -1,6 +1,6 @@
 # Portfolio_Website--React-on-going-
 
-- Website Link : https://fancy-biscuit-0eb92d.netlify.app/ (Responsive Mobile version still need to be tweaked)
+- Website Link : https://fancy-biscuit-0eb92d.netlify.app/
 
 - Creater : Yeonghwan Park (John Park)
 - Main Tools : React
