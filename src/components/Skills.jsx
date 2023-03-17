@@ -18,6 +18,8 @@ import {
   SiFirebase,
   SiGit,
   SiGithub,
+  SiTestinglibrary,
+  SiJest,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
@@ -169,7 +171,8 @@ export default function Skills() {
           <span>
             Python <SiPython color="#1028ad" />, Django{" "}
             <SiDjango color="#0f7542" />, JavaScript{" "}
-            <SiJavascript color="#faf61f" />,
+            <SiJavascript color="#faf61f" />
+            ,&nbsp;
           </span>
           <span>
             TypeScript <SiTypescript color="#0066ff" />, Jquery{" "}
@@ -180,7 +183,8 @@ export default function Skills() {
       <TextContainer2 ref={text2Ref}>
         <span>
           React JS <SiReact color="#15bdff" />, Next JS{" "}
-          <SiNextdotjs color="#2c2c2c" />,
+          <SiNextdotjs color="#2c2c2c" />
+          ,&nbsp;
         </span>
         <span>
           Redux(TK) <SiRedux color="#6b065e" />, React Query{" "}
@@ -189,7 +193,8 @@ export default function Skills() {
       </TextContainer2>
       <TextContainer ref={text3Ref}>
         <span>
-          Html <SiHtml5 color="#da1717" />, Css <SiCss3 color="#2e2bec" />,
+          Html <SiHtml5 color="#da1717" />, Css <SiCss3 color="#2e2bec" />
+          ,&nbsp;
         </span>
         <span>
           Tailwind <SiTailwindcss color="#5cdfdf" />, Styled components{" "}
@@ -198,8 +203,13 @@ export default function Skills() {
       </TextContainer>
       <TextContainer2 ref={text4Ref}>
         <span>
+          RTL <SiTestinglibrary color="#af0d0d" />, Jest{" "}
+          <SiJest color="#772f19" />
+          ,&nbsp;
+        </span>
+        <span>
           Firebase <SiFirebase color="#eca011" />, Git <SiGit color="#f51c1c" />
-          , Github <SiGithub color="#353535" />,
+          , Github <SiGithub color="#353535" />
         </span>
       </TextContainer2>
     </Section>

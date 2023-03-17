@@ -291,7 +291,15 @@ export default function Portfolios({ windowHeight, windowWidth }) {
             viewport={{ once: true }}
             selected={selected}
           >
-            <span style={selected ? windowWidth > 480 ? { height: "100vh" } : { height: "40vh" } : {}}>
+            <span
+              style={
+                selected
+                  ? windowWidth > 480
+                    ? { height: "100vh" }
+                    : { height: "40vh" }
+                  : {}
+              }
+            >
               {/* 타이틀 */}
               <Title
                 whileInView={
@@ -334,10 +342,10 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                   {/* Function */}
                   <b>Function</b> :
                   {data?.function?.map((func) => (
-                    <>
+                    <div key={func}>
                       <br />
                       {func}
-                    </>
+                    </div>
                   )) || " X"}{" "}
                   <br />
                   <br />
