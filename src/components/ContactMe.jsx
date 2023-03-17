@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
+import styled from "styled-components";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import emailjs from "@emailjs/browser";
@@ -104,6 +104,13 @@ const MyInfo = styled.div`
     font-size: 14px;
     width: 200px;
     height: 100px;
+  }
+  @media screen and (max-width: 480px) {
+    position: relative;
+    left: 18px;
+    font-size: 12px;
+    width: 170px;
+    height: 70px;
   }
 `;
 
@@ -238,11 +245,13 @@ export default function ContactMe({ windowWidth, windowHeight }) {
   const formRef = useRef(null);
   const myInfoRef = useRef(null);
   const computerRef = useRef(null);
+  const [timelineValue, setTimelineValue] = useState(0);
 
   // 윈도우창 크기에 따른 스크롤 시작 값
-  let timelineValue;
+  useEffect(() => {
+  let tlValue
   if (windowWidth > 1024) {
-    timelineValue =
+      tlValue =
       windowHeight > 1100
         ? 300
         : windowHeight > 800
@@ -250,19 +259,24 @@ export default function ContactMe({ windowWidth, windowHeight }) {
         : windowHeight > 550
         ? -500
         : -900;
+  } else if (windowWidth > 625) {
+    tlValue = windowHeight > 675 ? -2000 : windowHeight > 550 ? -1800 : -2100;
   } else {
-    timelineValue =
-      windowHeight > 675 ? -2000 : windowHeight > 550 ? -2300 : -2600;
+    tlValue = null;
   }
+    setTimelineValue(tlValue)
+  }, [windowWidth, windowHeight]);
 
   // 스크롤
   useLayoutEffect(() => {
+    if(timelineValue !== null){
     let t1 = gsap
       .timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: `top+=${timelineValue} top`,
           end: `top+=${timelineValue + 400} top`,
+          invalidateOnRefresh: true,
         },
       })
       .fromTo(sectionRef.current, { y: "200px" }, { y: 0, opacity: 1 });
@@ -272,16 +286,17 @@ export default function ContactMe({ windowWidth, windowHeight }) {
           trigger: sectionRef.current,
           start: `top+=${timelineValue + 800} top`,
           end: `top+=${timelineValue + 1900} top`,
+          invalidateOnRefresh: true,
           scrub: 1,
         },
       })
-      .fromTo(sectionRef.current, { y: 0 }, { y: "2200px" }, "key1")
+      .fromTo(sectionRef.current, { y: 0 }, { y: "2800px" }, "key1")
       .fromTo(
         contactMeRef.current,
         { y: 0 },
         windowWidth > 768
-          ? { y: "40vh", rotateZ: 90 }
-          : { y: "70vh", rotateZ: 90 },
+          ? { y: "400px", rotateZ: 90 }
+          : { y: "500px", rotateZ: 90 },
         "key1"
       )
       .fromTo(formRef.current, { x: 0 }, { x: "20vw" }, "key1")
@@ -289,16 +304,16 @@ export default function ContactMe({ windowWidth, windowHeight }) {
         myInfoRef.current,
         { x: 0 },
         windowWidth > 768
-          ? { x: "-30vw", y: "30vh", rotateZ: 90 }
-          : { x: "10vw", y: "40vh", rotateZ: -90 },
+          ? { x: "-300px", y: "300px", rotateZ: 90 }
+          : { x: "100px", y: "400px", rotateZ: -90 },
         "key1"
       )
       .fromTo(
         computerRef.current,
         { x: 0 },
         windowWidth > 768
-          ? { x: "-30vw", y: "-30vh" }
-          : { x: "-30vw", y: "30vh" },
+          ? { x: "-300px", y: "-300px" }
+          : { x: "-300px", y: "300px" },
         "key1"
       );
 
@@ -306,7 +321,10 @@ export default function ContactMe({ windowWidth, windowHeight }) {
       if (t1) t1.kill();
       if (t2) t2.kill();
     };
-  }, []);
+  } else{
+    sectionRef.current.style.opacity = 1;
+  }
+  }, [timelineValue]);
 
   // 이메일 보내는 함수
   const sendEmail = (e) => {

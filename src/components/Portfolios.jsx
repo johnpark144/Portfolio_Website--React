@@ -128,9 +128,6 @@ const Tools = styled(motion.h3)`
     margin-top: 10px;
     margin-bottom: -10px;
   }
-  @media screen and (max-width: 1024px) {
-    font-size: var(--fontxs);
-  }
 `;
 
 const Contents = styled(motion.h3)`
@@ -169,6 +166,12 @@ const ImgWebsite = styled(motion.span)`
   @media screen and (max-width: 1024px) {
     flex-direction: row;
   }
+
+  @media screen and (max-width: 625px) {
+    position: ${({ selected }) => (selected ? "absolute" : "")};
+    bottom: ${({ selected }) => (selected ? 0 : "")};
+    height: ${({ selected }) => (selected ? "130px" : "100%")};
+  }
 `;
 
 const Img = styled(motion.img)`
@@ -184,7 +187,7 @@ const Img = styled(motion.img)`
     height: 180px;
   }
   @media screen and (max-width: 625px) {
-    width: 260px;
+    width: 230px;
     height: 130px;
   }
 `;
@@ -197,12 +200,6 @@ const WebsiteLink = styled(motion.div)`
   padding: 10px;
   overflow: visible;
 
-  @media screen and (max-width: 1024px) {
-    width: 170px;
-    height: 50px;
-    font-size: 14px;
-  }
-
   & > a {
     font-weight: 800;
     width: 100px;
@@ -213,6 +210,20 @@ const WebsiteLink = styled(motion.div)`
     overflow: visible;
     text-decoration: none;
     color: black;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 170px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 625px) {
+    flex-direction: column;
+
+    & > a {
+      margin: 2px;
+    }
   }
 `;
 
@@ -232,7 +243,7 @@ const Closebtn = styled(SlClose)`
 `;
 
 // 디폴트 함수
-export default function Portfolios({ windowHeight }) {
+export default function Portfolios({ windowHeight, windowWidth }) {
   const [selectedId, setSelectedId] = useState(null);
   return (
     // 전체 포트폴리오
@@ -257,7 +268,7 @@ export default function Portfolios({ windowHeight }) {
                     zIndex: 99999,
                     backgroundColor: "#81aec9",
                     width: "85%",
-                    height: "88vh",
+                    height: windowWidth > 625 ? "88vh" : "55vh",
                     opacity: 1,
                     x: 0,
                     lineHeight: "50px",
@@ -280,7 +291,7 @@ export default function Portfolios({ windowHeight }) {
             viewport={{ once: true }}
             selected={selected}
           >
-            <span style={selected ? { height: "50vw" } : {}}>
+            <span style={selected ? windowWidth > 480 ? { height: "100vh" } : { height: "40vh" } : {}}>
               {/* 타이틀 */}
               <Title
                 whileInView={
@@ -365,6 +376,7 @@ export default function Portfolios({ windowHeight }) {
                 transition: { delay: 0.2, duration: 0.8 },
               }}
               viewport={{ once: true }}
+              selected={selected}
             >
               {/* 이미지 */}
               <Img src={data.cover} />

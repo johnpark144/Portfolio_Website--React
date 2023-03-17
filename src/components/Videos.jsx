@@ -55,7 +55,7 @@ const PortfolioVideo1 = styled.video`
     width: calc(60% + 150px);
   }
   @media screen and (max-width: 768px) {
-    top: 120px;
+    top: 100px;
     width: 150%;
   }
 `;
@@ -136,7 +136,7 @@ const PortfolioVideo5 = styled.video`
 `;
 
 // 디폴트 함수
-export default function Videos() {
+export default function Videos({ windowWidth }) {
   const sectionRef = useRef(null);
   const forYouBusyRef = useRef(null);
   const videoRef1 = useRef(null);
@@ -179,10 +179,16 @@ export default function Videos() {
       .to(video1Elem, { scale: 0.4, x: "-25%", y: "-4%" }, "key1")
       .to(video2Elem, { scale: 0.4, x: "-10%", y: "-35%" }, "key1")
       .to(video3Elem, { scale: 0.5, x: "-25%", y: "-1%" }, "key1")
-      .to(video4Elem, { scale: 0.3, y: "-10%" }, "key1")
+      .to(
+        video4Elem,
+        windowWidth > 768
+          ? { scale: 0.3, y: "-10%" }
+          : { scale: 0.3 },
+        "key1"
+      )
       .to(video5Elem, { scale: 0.4, x: "-30%", y: "-20%" }, "key1")
       .to(forYouBusyElem, { x: "25%" }, "key1");
-  }, []);
+  }, [windowWidth]);
 
   return (
     <Section ref={sectionRef}>

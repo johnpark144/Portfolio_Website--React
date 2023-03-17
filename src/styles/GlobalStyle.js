@@ -60,5 +60,4 @@ b{
     opacity: calc(var(--visible-y) * var(--visible-y));
     transform: scale(calc(0.5 + calc(var(--visible-y) * 0.5)));
  } 
-`
-
+`;

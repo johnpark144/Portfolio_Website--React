@@ -67,6 +67,11 @@ const AboutMeMessage = styled(motion.div)`
     line-height: 23px;
     padding: 20px 40px 5px 40px;
   }
+
+  @media screen and (max-width: 480px) {
+    letter-spacing: 0px;
+    line-height: 21px;
+  }
 `;
 
 const Title = styled.h1`
@@ -131,6 +136,11 @@ const CertificateImg = styled(motion.img)`
     top: 350px;
     right: -60px;
     width: 220px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 130px;
+    height: 120px;
   }
 `;
 

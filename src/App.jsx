@@ -17,8 +17,8 @@ import ContactMe from "./components/ContactMe";
 
 const PortfolioContainer = styled.div`
   background: ${({ backgroundColor }) => backgroundColor};
-  width: calc(100vw - 17px);
-  overflow-y: hidden;
+  overflow: hidden;
+  width: 100%;
 `;
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
           {/* 영환이 포트폴리오 */}
           <YeonghwansPortfolio />
           {/* 스크롤시 달, 별 SVG */}
-          <MoonStarScroll windowHeight={windowHeight} />
+          <MoonStarScroll windowHeight={windowHeight}/>
           {/* 반짝이는 별 */}
           <MovingStar />
           {/* About me와 로켓 */}
@@ -66,9 +66,9 @@ function App() {
           {/* 구름과 비행기 */}
           <CloudAirplain />
           {/* 비디오들 */}
-          <Videos />
+          <Videos windowWidth={windowWidth} />
           {/* 포트폴리오들 */}
-          <Portfolios windowHeight={windowHeight} />
+          <Portfolios windowHeight={windowHeight} windowWidth={windowWidth} />
           {/* My path*/}
           <MyPath windowWidth={windowWidth} windowHeight={windowHeight} />
           {/* 이메일 */}
