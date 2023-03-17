@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import emailjs from "@emailjs/browser";
 import { Model } from "../assets/3d/Desktop_computer";
 import { Canvas } from "@react-three/fiber";
@@ -240,6 +241,8 @@ const Computer = styled.div`
 
 // 디폴트 함수
 export default function ContactMe({ windowWidth, windowHeight }) {
+  gsap.registerPlugin(ScrollTrigger);
+  
   const sectionRef = useRef(null);
   const contactMeRef = useRef(null);
   const formRef = useRef(null);
@@ -248,7 +251,11 @@ export default function ContactMe({ windowWidth, windowHeight }) {
   const [timelineValue, setTimelineValue] = useState(0);
 
   // 윈도우창 크기에 따른 스크롤 시작 값
+<<<<<<< HEAD
   useEffect(() => {
+=======
+ useEffect(() => {
+>>>>>>> origin/main
   let tlValue
   if (windowWidth > 1024) {
       tlValue =

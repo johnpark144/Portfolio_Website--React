@@ -8,6 +8,14 @@ export const GlobalStyle = createGlobalStyle`
     /* outline: 1px solid red !important;  // 전체 프레임 생성 테스트용 */
 }
 
+html, body { 
+  max-width: 100%;
+  overflow-x: hidden; 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+}
+
 /* 스크롤 전체 */
 ::-webkit-scrollbar {
   width: 20px;
