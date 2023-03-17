@@ -242,7 +242,7 @@ const Computer = styled.div`
 // 디폴트 함수
 export default function ContactMe({ windowWidth, windowHeight }) {
   gsap.registerPlugin(ScrollTrigger);
-  
+
   const sectionRef = useRef(null);
   const contactMeRef = useRef(null);
   const formRef = useRef(null);
@@ -251,86 +251,82 @@ export default function ContactMe({ windowWidth, windowHeight }) {
   const [timelineValue, setTimelineValue] = useState(0);
 
   // 윈도우창 크기에 따른 스크롤 시작 값
-<<<<<<< HEAD
   useEffect(() => {
-=======
- useEffect(() => {
->>>>>>> origin/main
-  let tlValue
-  if (windowWidth > 1024) {
+    let tlValue;
+    if (windowWidth > 1024) {
       tlValue =
-      windowHeight > 1100
-        ? 300
-        : windowHeight > 800
-        ? -100
-        : windowHeight > 550
-        ? -500
-        : -900;
-  } else if (windowWidth > 625) {
-    tlValue = windowHeight > 675 ? -2000 : windowHeight > 550 ? -1800 : -2100;
-  } else {
-    tlValue = null;
-  }
-    setTimelineValue(tlValue)
+        windowHeight > 1100
+          ? 300
+          : windowHeight > 800
+          ? -100
+          : windowHeight > 550
+          ? -500
+          : -900;
+    } else if (windowWidth > 625) {
+      tlValue = windowHeight > 675 ? -2000 : windowHeight > 550 ? -1800 : -2100;
+    } else {
+      tlValue = null;
+    }
+    setTimelineValue(tlValue);
   }, [windowWidth, windowHeight]);
 
   // 스크롤
   useLayoutEffect(() => {
-    if(timelineValue !== null){
-    let t1 = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: `top+=${timelineValue} top`,
-          end: `top+=${timelineValue + 400} top`,
-          invalidateOnRefresh: true,
-        },
-      })
-      .fromTo(sectionRef.current, { y: "200px" }, { y: 0, opacity: 1 });
-    let t2 = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: `top+=${timelineValue + 800} top`,
-          end: `top+=${timelineValue + 1900} top`,
-          invalidateOnRefresh: true,
-          scrub: 1,
-        },
-      })
-      .fromTo(sectionRef.current, { y: 0 }, { y: "2800px" }, "key1")
-      .fromTo(
-        contactMeRef.current,
-        { y: 0 },
-        windowWidth > 768
-          ? { y: "400px", rotateZ: 90 }
-          : { y: "500px", rotateZ: 90 },
-        "key1"
-      )
-      .fromTo(formRef.current, { x: 0 }, { x: "20vw" }, "key1")
-      .fromTo(
-        myInfoRef.current,
-        { x: 0 },
-        windowWidth > 768
-          ? { x: "-300px", y: "300px", rotateZ: 90 }
-          : { x: "100px", y: "400px", rotateZ: -90 },
-        "key1"
-      )
-      .fromTo(
-        computerRef.current,
-        { x: 0 },
-        windowWidth > 768
-          ? { x: "-300px", y: "-300px" }
-          : { x: "-300px", y: "300px" },
-        "key1"
-      );
+    if (timelineValue !== null) {
+      let t1 = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: `top+=${timelineValue} top`,
+            end: `top+=${timelineValue + 400} top`,
+            invalidateOnRefresh: true,
+          },
+        })
+        .fromTo(sectionRef.current, { y: "200px" }, { y: 0, opacity: 1 });
+      let t2 = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: `top+=${timelineValue + 800} top`,
+            end: `top+=${timelineValue + 1900} top`,
+            invalidateOnRefresh: true,
+            scrub: 1,
+          },
+        })
+        .fromTo(sectionRef.current, { y: 0 }, { y: "2800px" }, "key1")
+        .fromTo(
+          contactMeRef.current,
+          { y: 0 },
+          windowWidth > 768
+            ? { y: "400px", rotateZ: 90 }
+            : { y: "500px", rotateZ: 90 },
+          "key1"
+        )
+        .fromTo(formRef.current, { x: 0 }, { x: "20vw" }, "key1")
+        .fromTo(
+          myInfoRef.current,
+          { x: 0 },
+          windowWidth > 768
+            ? { x: "-300px", y: "300px", rotateZ: 90 }
+            : { x: "100px", y: "400px", rotateZ: -90 },
+          "key1"
+        )
+        .fromTo(
+          computerRef.current,
+          { x: 0 },
+          windowWidth > 768
+            ? { x: "-300px", y: "-300px" }
+            : { x: "-300px", y: "300px" },
+          "key1"
+        );
 
-    return () => {
-      if (t1) t1.kill();
-      if (t2) t2.kill();
-    };
-  } else{
-    sectionRef.current.style.opacity = 1;
-  }
+      return () => {
+        if (t1) t1.kill();
+        if (t2) t2.kill();
+      };
+    } else {
+      sectionRef.current.style.opacity = 1;
+    }
   }, [timelineValue]);
 
   // 이메일 보내는 함수

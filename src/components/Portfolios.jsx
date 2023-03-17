@@ -291,7 +291,6 @@ export default function Portfolios({ windowHeight, windowWidth }) {
             viewport={{ once: true }}
             selected={selected}
           >
-<<<<<<< HEAD
             <span
               style={
                 selected
@@ -301,9 +300,6 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                   : {}
               }
             >
-=======
-            <span style={selected ? windowWidth > 480 ? { height: "100vh" } : { height: "40vh" } : {}}>
->>>>>>> origin/main
               {/* 타이틀 */}
               <Title
                 whileInView={
