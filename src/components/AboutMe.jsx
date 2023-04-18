@@ -181,16 +181,16 @@ export default function AboutMe({ windowHeight }) {
       >
         <Title>- Introduce</Title>
         <Message>
-          HI I am Yeonghwan Park (John Park), I am self-taught front-developer
-          who are aiming for fullstack-developer
+          HI I am Yeonghwan Park, I am self-taught front-developer who are
+          aiming for fullstack-developer
         </Message>
         <Title>- Education</Title>
-        <Message>* Robotics - Yangyeong Digital High school</Message>
+        <Message>* Robotics - Yangyoung Digital High school</Message>
         <Message>* IT Media - Shingu College (1yr)</Message>
         <Message>* Meta Front end Developer Professional Certificate</Message>
         <CertificateImg src={certificate} windowHeight={windowHeight} />
         <Title>- Contact Details</Title>
-        <Message>+1 832 480 0344</Message>
+        <Message>+82 010 9126 4842</Message>
         <Message>vyckd354@gmail.com</Message>
       </AboutMeMessage>
 
