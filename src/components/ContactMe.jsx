@@ -262,8 +262,6 @@ export default function ContactMe({ windowWidth, windowHeight }) {
           : windowHeight > 550
           ? -500
           : -900;
-    } else if (windowWidth > 625) {
-      tlValue = windowHeight > 675 ? -2000 : windowHeight > 550 ? -1800 : -2100;
     } else {
       tlValue = null;
     }

@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import gsap from "gsap";
 import { useThree } from "@react-three/fiber";
 
-export function Model({ sectionRef, timelineValue}) {
+export function Model({ sectionRef, timelineValue }) {
   const { nodes, materials } = useGLTF("/desktop_computer.glb");
   let scene = useThree((state) => state.scene);
 
@@ -28,7 +28,7 @@ export function Model({ sectionRef, timelineValue}) {
           scrub: 1,
         },
       })
-      .to(scene.rotation, {y: -2, x: 4, z: 2 }, "key1")  
+      .to(scene.rotation, { y: -2, x: 4, z: 2 }, "key1");
   }, []);
 
   return (
