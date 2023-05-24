@@ -1,4 +1,4 @@
-# Portfolio_Website--React-on-going-
+# Portfolio_Website--React
 - 웹사이트 링크 : https://fancy-biscuit-0eb92d.netlify.app/
 
 - 만든이 : 박영환(John Park)
