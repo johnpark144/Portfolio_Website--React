@@ -128,7 +128,7 @@ export default function MyPath({ windowWidth, windowHeight }) {
   const [myPathDatas, setMyPathDatas] = useState(myPath);
 
   useEffect(() => {
-    isKor ? setMyPathDatas(myPath) : setMyPathDatas(myPath_Kor);
+    isKor ? setMyPathDatas(myPath_Kor) : setMyPathDatas(myPath);
   }, [isKor]);
 
   // 데이터 분할
@@ -176,7 +176,7 @@ export default function MyPath({ windowWidth, windowHeight }) {
             windowHeight={windowHeight}
             onClick={() => setIsKor(!isKor)}
           >
-            {isKor ? "[ 한글로 보기 (KOR) ]" : "[ 영어로 보기 (ENG) ]"}
+            {isKor ? "[ 영어로 보기 (ENG) ]" : "[ 한글로 보기 (KOR) ]"}
           </LanguageChange>
         </h1>
         <MyPathContainer windowHeight={windowHeight}>
