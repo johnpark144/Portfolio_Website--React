@@ -55,9 +55,10 @@ export default function PortfoliosChart({
   selected,
   idea_clone,
   windowHeight,
+  isKor,
 }) {
   const data = {
-    labels: ["Idea", "Clone"],
+    labels: isKor ? ["아이디어", "클 론"] : ["Idea", "Clone"],
     datasets: [
       {
         label: "# of Votes",
@@ -99,8 +100,14 @@ export default function PortfoliosChart({
       </Chart>
       {selected ? (
         <span>
-          <p>idea : {idea_clone[0]}</p>
-          <p>clone : {idea_clone[1]}</p>
+          <p>
+            {" "}
+            {isKor ? "아이디어" : "Idea"} : {idea_clone[0]}
+          </p>
+          <p>
+            {" "}
+            {isKor ? "클 론" : "Clone"} : {idea_clone[1]}
+          </p>
         </span>
       ) : (
         ""

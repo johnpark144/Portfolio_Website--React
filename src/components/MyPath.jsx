@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import myPathDatas from "../assets/json/mypath.json";
+import React, { useState, useEffect } from "react";
+import myPath from "../assets/json/mypath.json";
+import myPath_Kor from "../assets/json/mypath_Kor.json";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import styled, { css } from "styled-components";
 import { TbArrowBigDownLines } from "react-icons/tb";
@@ -67,6 +68,20 @@ const MyPathSection = styled(motion.section)`
   }
 `;
 
+const LanguageChange = styled(motion.div)`
+  display: inline-block;
+  font-size: ${({ windowHeight }) => (windowHeight >= 850 ? "16px" : "12px")};
+  margin-left: 28px;
+  height: 30px;
+  padding: 8px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-align: center;
+  border-color: transparent;
+  cursor: pointer;
+  overflow: visible;
+`;
+
 const MyPathContainer = styled(motion.div)`
   height: 100%;
   font-size: ${({ windowHeight }) =>
@@ -109,6 +124,13 @@ const MyPathSingle = styled(motion.div)`
 
 // 디폴트함수
 export default function MyPath({ windowWidth, windowHeight }) {
+  const [isKor, setIsKor] = useState(false);
+  const [myPathDatas, setMyPathDatas] = useState(myPath);
+
+  useEffect(() => {
+    isKor ? setMyPathDatas(myPath) : setMyPathDatas(myPath_Kor);
+  }, [isKor]);
+
   // 데이터 분할
   const myPathDatas1 = myPathDatas.slice(0, Math.ceil(myPathDatas.length / 2));
   const myPathDatas2 = myPathDatas.slice(
@@ -145,7 +167,18 @@ export default function MyPath({ windowWidth, windowHeight }) {
       id="mypath"
     >
       <div>
-        <h1>My Path</h1>
+        <h1>
+          My Path
+          <LanguageChange
+            whileHover={{
+              fontSize: windowHeight >= 850 ? "18px" : "14px",
+            }}
+            windowHeight={windowHeight}
+            onClick={() => setIsKor(!isKor)}
+          >
+            {isKor ? "[ 한글로 보기 (KOR) ]" : "[ 영어로 보기 (ENG) ]"}
+          </LanguageChange>
+        </h1>
         <MyPathContainer windowHeight={windowHeight}>
           <div>
             {/* 왼쪽 */}

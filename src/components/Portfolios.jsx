@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 import PortfoliosChart from "./PortfoliosChart";
 import PortfoliosTools from "./PortfoliosTools";
 import portfolioDatas from "../assets/json/portfolio.json";
+import portfolioDatasKor from "../assets/json/portfolio_Kor.json";
 import { SlClose } from "react-icons/sl";
 import { BsGithub, BsLink } from "react-icons/bs";
 
@@ -30,6 +31,32 @@ const PortfoliosContainer = styled(motion.div)`
       font-size: var(--fontmd);
       height: 50px;
       margin: 20px;
+    }
+  }
+
+  & > button {
+    font-size: var(--fontxs);
+    height: 40px;
+    margin: 10px;
+    padding: 0px 8px;
+    font-weight: 600;
+    background-color: #b4dbe0;
+    border-radius: 20px;
+    text-align: center;
+    border-color: transparent;
+    cursor: pointer;
+    overflow: visible;
+    text-decoration: none;
+    color: black;
+    box-shadow: 1px 1px 5px 2px #4a676b;
+
+    @media screen and (max-width: 1024px) {
+      font-size: var(--fontxxs);
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 30px;
+      margin: 7px;
     }
   }
 `;
@@ -245,11 +272,23 @@ const Closebtn = styled(SlClose)`
 // 디폴트 함수
 export default function Portfolios({ windowHeight, windowWidth }) {
   const [selectedId, setSelectedId] = useState(null);
+  const [isKor, setIsKor] = useState(false);
   return (
     // 전체 포트폴리오
     <PortfoliosContainer>
       <h1>My Portfolios</h1>
-      {portfolioDatas.map((data) => {
+      <motion.button
+        whileHover={{
+          scale: 1.1,
+        }}
+        whileTap={{
+          scale: 0.9,
+        }}
+        onClick={() => setIsKor(!isKor)}
+      >
+        {isKor ? "영어로 보기(ENG)" : "한글로 보기(KOR)"}
+      </motion.button>
+      {(isKor ? portfolioDatasKor : portfolioDatas).map((data) => {
         let selected = selectedId === data.id; // 클릭누르면 selected = true
         return (
           // 싱글 포트폴리오
@@ -259,7 +298,10 @@ export default function Portfolios({ windowHeight, windowWidth }) {
             onClick={() => {
               !selected && setSelectedId(data.id);
             }}
-            initial={{ opacity: 0, x: Number(data.id) % 2 === 0 ? -200 : 200 }}
+            initial={{
+              opacity: 0,
+              x: Number(data.id) % 2 === 0 ? -200 : 200,
+            }}
             whileInView={
               selected
                 ? {
@@ -315,11 +357,13 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                 viewport={{ once: true }}
               >
                 <p>{data.title}</p>
-                <p>LoginMust? : {data.loginMust}</p>
+                <p>
+                  {isKor ? "로그인 필수 ?" : "LoginMust ?"} : {data.loginMust}
+                </p>
               </Title>
               {/* 사용한 기술 */}
               <Tools>
-                <b>Tools</b> :
+                <b>{isKor ? "도구" : "Tools"}</b> :
                 {data.tools
                   .slice(0, selected ? data.tools.length : 7) // 미리보기: 7개만, 클릭한경우: 전체
                   .map((tool, idx) => (
@@ -336,23 +380,24 @@ export default function Portfolios({ windowHeight, windowWidth }) {
               {selected ? (
                 <Contents>
                   <br />
-                  {/* description  */}
-                  <b>Description</b> :{data?.description} <br />
+                  {/* Description  */}
+                  <b>{isKor ? "설명" : "Description"}</b> : {data?.description}{" "}
+                  <br />
                   <br />
                   {/* Function */}
-                  <b>Function</b> :
+                  <b>{isKor ? "기능" : "Function"}</b> :
                   {data?.function?.map((func) => (
                     <div key={func}>
-                      <br />
-                      {func}
+                      <br />- {func}
                     </div>
                   )) || " X"}{" "}
                   <br />
                   <br />
                   {/* Name Why  */}
-                  <b>Name Why?</b> :{data?.nameWhy || " X"} <br /> <br />
+                  <b>{isKor ? "이름의 의미" : "Name Why ?"}</b> :
+                  {data?.nameWhy || " X"} <br /> <br />
                   {/* HardPart  */}
-                  <b>Hard Part</b> :<br />
+                  <b>{isKor ? "어려웠던 점" : "Hard Part"}</b> :<br />
                   {data?.hardPart?.map((hardPart, idx) => (
                     <>
                       <span style={{ color: "#990a0a" }}> {idx + 1} -</span>{" "}
@@ -362,7 +407,8 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                   ))}{" "}
                   <br />
                   {/* Things To Fix  */}
-                  <b>Things To Fix</b> :{data?.thingsToFix} <br />
+                  <b>{isKor ? "개선해야 할 점" : "Things To Fix"}</b> :
+                  {data?.thingsToFix} <br />
                 </Contents>
               ) : (
                 ""
@@ -373,6 +419,7 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                 selected={selected}
                 idea_clone={data.idea_clone}
                 windowHeight={windowHeight}
+                isKor={isKor}
               />
             </span>
             {/* 이미지, 링크 */}
