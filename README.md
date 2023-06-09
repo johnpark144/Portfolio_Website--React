@@ -1,4 +1,4 @@
-<a href="README_KOR.md">한글로 보기(KOR)</a>
+------<a href="README_KOR.md">한글로 보기(KOR)</a>------
 
 # Portfolio_Website--React
 - Website Link : https://fancy-biscuit-0eb92d.netlify.app/
