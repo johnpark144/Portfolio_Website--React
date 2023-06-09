@@ -1,4 +1,4 @@
-------<a href="README_KOR.md">한글로 보기(KOR)</a>------
+---------- <a href="README_KOR.md">한글로 보기(KOR)</a> ----------
 
 # Portfolio_Website--React
 - Website Link : https://fancy-biscuit-0eb92d.netlify.app/
@@ -18,7 +18,6 @@ by this, I came to learn more about Animation libraries not to mention Styled-co
 3. While Buliding Email part and giving it scroll-animation, sometimes click didn't work on text-input but I found It was because I made SVG-Image to cover all background with the high value of Z-index initially, so It took time to find out the reason. but this error helpped me to have upgraded solving problem skill
 
 - ps. I learned a library called "react-simple-typewriter" implementing typing letters on display which look cool.. but I saw too many Portfolio Websites people used that... I came to realize this is too common to use it in order to outstand out of them. so I took off that one.
-
 - Login Must ? : No
 
 - Comment language : Korean
