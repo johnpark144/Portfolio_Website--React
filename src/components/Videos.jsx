@@ -1,31 +1,33 @@
-import React, { useLayoutEffect, useRef } from "react";
-import styled from "styled-components";
-import gsap from "gsap";
-import portfolioVideo1 from "../assets/videos/portfolioVideo1.mp4";
-import portfolioVideo2 from "../assets/videos/portfolioVideo2.mp4";
-import portfolioVideo3 from "../assets/videos/portfolioVideo3.mp4";
-import portfolioVideo4 from "../assets/videos/portfolioVideo4.mp4";
-import portfolioVideo5 from "../assets/videos/portfolioVideo5.mp4";
+import React, { useLayoutEffect, useRef } from 'react';
+import styled from 'styled-components';
+import gsap from 'gsap';
+import portfolioVideo1 from '../assets/videos/portfolioVideo1.mp4';
+import portfolioVideo2 from '../assets/videos/portfolioVideo2.mp4';
+import portfolioVideo3 from '../assets/videos/portfolioVideo3.mp4';
+import portfolioVideo4 from '../assets/videos/portfolioVideo4.mp4';
+import portfolioVideo5 from '../assets/videos/portfolioVideo5.mp4';
+import portfolioVideo6 from '../assets/videos/portfolioVideo6.mp4';
 
 // 스타일
 const Section = styled.section`
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   margin: 100px 0;
 
   @media screen and (max-width: 768px) {
-    height: 1300px;
+    height: 1380px;
   }
 `;
 
 const ForYouBusy = styled.h1`
   position: absolute;
   top: 35px;
-  font-family: "Raleway", sans-serif;
-  color: white;
+  font-family: 'Raleway', sans-serif;
+  color: #c9c8ff;
   font-size: var(--fontxl);
+  z-index: 2;
 
   @media screen and (max-width: 1427px) {
     font-size: var(--fontlg);
@@ -55,8 +57,11 @@ const PortfolioVideo1 = styled.video`
     width: calc(60% + 150px);
   }
   @media screen and (max-width: 768px) {
-    top: 100px;
+    top: -60px;
     width: 150%;
+  }
+  @media screen and (max-width: 562px) {
+    top: calc(10% - 155px);
   }
 `;
 
@@ -135,6 +140,30 @@ const PortfolioVideo5 = styled.video`
   }
 `;
 
+const PortfolioVideo6 = styled.video`
+  position: absolute;
+  top: 22%;
+  left: 55%;
+  width: calc(6% + 70px);
+  height: auto;
+  z-index: 1;
+  border-radius: 20px;
+  overflow-y: visible;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(6% + 60px);
+    left: 47%;
+  }
+  @media screen and (max-width: 768px) {
+    top: 110%;
+    width: 30%;
+    left: 22px;
+  }
+  @media screen and (max-width: 562px) {
+    top: calc(103% - 105px);
+  }
+`;
+
 // 디폴트 함수
 export default function Videos({ windowWidth }) {
   const sectionRef = useRef(null);
@@ -144,6 +173,7 @@ export default function Videos({ windowWidth }) {
   const videoRef3 = useRef(null);
   const videoRef4 = useRef(null);
   const videoRef5 = useRef(null);
+  const videoRef6 = useRef(null);
 
   useLayoutEffect(() => {
     const elem = sectionRef.current;
@@ -153,12 +183,13 @@ export default function Videos({ windowWidth }) {
     const video3Elem = videoRef3.current;
     const video4Elem = videoRef4.current;
     const video5Elem = videoRef5.current;
+    const video6Elem = videoRef6.current;
 
     // 섹션을 고정
     gsap.to(elem, {
       scrollTrigger: {
         trigger: elem,
-        start: "top top",
+        start: 'top top',
         end: `bottom+=300 bottom`,
         scrub: 1,
         pin: true,
@@ -171,23 +202,22 @@ export default function Videos({ windowWidth }) {
       .timeline({
         scrollTrigger: {
           trigger: elem,
-          start: "top top",
+          start: 'top top',
           end: `bottom+=300 bottom`,
           scrub: 1,
         },
       })
-      .to(video1Elem, { scale: 0.4, x: "-25%", y: "-4%" }, "key1")
-      .to(video2Elem, { scale: 0.4, x: "-10%", y: "-35%" }, "key1")
-      .to(video3Elem, { scale: 0.5, x: "-25%", y: "-1%" }, "key1")
+      .to(video1Elem, { scale: 0.4, x: '-15%', y: '-4%' }, 'key1')
+      .to(video2Elem, { scale: 0.4, x: '-13%', y: '-35%' }, 'key1')
+      .to(video3Elem, { scale: 0.5, x: '-25%', y: '-1%' }, 'key1')
       .to(
         video4Elem,
-        windowWidth > 768
-          ? { scale: 0.3, y: "-10%" }
-          : { scale: 0.3 },
-        "key1"
+        windowWidth > 768 ? { scale: 0.25, y: '-5%' } : { scale: 0.3 },
+        'key1'
       )
-      .to(video5Elem, { scale: 0.4, x: "-30%", y: "-20%" }, "key1")
-      .to(forYouBusyElem, { x: "25%" }, "key1");
+      .to(video5Elem, { scale: 0.4, x: '-30%', y: '-20%' }, 'key1')
+      .to(video6Elem, { scale: 0.8, x: '10%', y: '-70%' }, 'key1')
+      .to(forYouBusyElem, { x: '25%' }, 'key1');
   }, [windowWidth]);
 
   return (
@@ -201,7 +231,7 @@ export default function Videos({ windowWidth }) {
       <PortfolioVideo1
         ref={videoRef1}
         src={portfolioVideo1}
-        type="video/mp4"
+        type='video/mp4'
         autoPlay
         muted
         loop
@@ -210,7 +240,7 @@ export default function Videos({ windowWidth }) {
       <PortfolioVideo2
         ref={videoRef2}
         src={portfolioVideo2}
-        type="video/mp4"
+        type='video/mp4'
         autoPlay
         muted
         loop
@@ -219,7 +249,7 @@ export default function Videos({ windowWidth }) {
       <PortfolioVideo3
         ref={videoRef3}
         src={portfolioVideo3}
-        type="video/mp4"
+        type='video/mp4'
         autoPlay
         muted
         loop
@@ -228,7 +258,7 @@ export default function Videos({ windowWidth }) {
       <PortfolioVideo4
         ref={videoRef4}
         src={portfolioVideo4}
-        type="video/mp4"
+        type='video/mp4'
         autoPlay
         muted
         loop
@@ -237,7 +267,16 @@ export default function Videos({ windowWidth }) {
       <PortfolioVideo5
         ref={videoRef5}
         src={portfolioVideo5}
-        type="video/mp4"
+        type='video/mp4'
+        autoPlay
+        muted
+        loop
+      />
+      {/* MYabc RN 영상 */}
+      <PortfolioVideo6
+        ref={videoRef6}
+        src={portfolioVideo6}
+        type='video/mp4'
         autoPlay
         muted
         loop
