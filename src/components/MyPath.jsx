@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import myPath from "../assets/json/mypath.json";
-import myPath_Kor from "../assets/json/mypath_Kor.json";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import styled, { css } from "styled-components";
-import { TbArrowBigDownLines } from "react-icons/tb";
+import React, { useState, useEffect } from 'react';
+import myPath from '../assets/json/mypath.json';
+import myPath_Kor from '../assets/json/mypath_Kor.json';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import styled, { css } from 'styled-components';
+import { TbArrowBigDownLines } from 'react-icons/tb';
 
 // 스타일
 const GradientText = css`
@@ -24,10 +24,10 @@ const MyPathSection = styled(motion.section)`
   position: relative;
   left: 5%;
   width: 90%;
-  height: ${({ windowHeight }) => (windowHeight >= 600 ? "100vh" : "750px")};
+  height: ${({ windowHeight }) => (windowHeight >= 600 ? '100vh' : '750px')};
   margin: 200px 0;
   border-radius: 100px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@ const MyPathSection = styled(motion.section)`
     width: 95%;
     padding: 20px;
     overflow-y: hidden;
-    ${({ overPathNumber }) => (overPathNumber ? GradientText : "")}
+    ${({ overPathNumber }) => (overPathNumber ? GradientText : '')}
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -59,18 +59,24 @@ const MyPathSection = styled(motion.section)`
   }
 
   & > div > h1 {
-    font-size: ${({ windowHeight }) => (windowHeight >= 850 ? "30px" : "20px")};
+    font-size: ${({ windowHeight }) => (windowHeight >= 850 ? '30px' : '20px')};
     margin-bottom: 20px;
 
     @media screen and (max-width: 1427px) {
       margin-bottom: 5px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: ${({ windowHeight }) =>
+        windowHeight >= 850 ? '20px' : '16px'};
+      margin-bottom: 0px;
     }
   }
 `;
 
 const LanguageChange = styled(motion.div)`
   display: inline-block;
-  font-size: ${({ windowHeight }) => (windowHeight >= 850 ? "16px" : "12px")};
+  font-size: ${({ windowHeight }) => (windowHeight >= 850 ? '16px' : '12px')};
   margin-left: 28px;
   height: 30px;
   padding: 8px;
@@ -80,20 +86,26 @@ const LanguageChange = styled(motion.div)`
   border-color: transparent;
   cursor: pointer;
   overflow: visible;
+
+  @media screen and (max-width: 400px) {
+    margin-left: 4px;
+    font-size: ${({ windowHeight }) => (windowHeight >= 850 ? '14px' : '10px')};
+  }
 `;
 
 const MyPathContainer = styled(motion.div)`
   height: 100%;
   font-size: ${({ windowHeight }) =>
-    windowHeight > 1400 ? "18px" : windowHeight > 700 ? "15px" : "14px"};
+    windowHeight > 1400 ? '18px' : windowHeight > 700 ? '15px' : '14px'};
   display: flex;
   align-items: center;
 
   @media screen and (max-width: 1427px) {
-    font-size: ${({ windowHeight }) => (windowHeight > 1400 ? "17px" : "13px")};
+    font-size: ${({ windowHeight }) => (windowHeight > 1400 ? '17px' : '13px')};
     letter-spacing: -1px;
   }
   @media screen and (max-width: 400px) {
+    font-size: ${({ windowHeight }) => (windowHeight > 1400 ? '15px' : '11px')};
     line-height: 14px;
   }
 `;
@@ -110,7 +122,7 @@ const Emphasized = css`
 
 const MyPathSingle = styled(motion.div)`
   font-style: italic;
-  font-weight: ${({ data }) => (isNaN(data.slice(0, 1)) ? "100" : "800")};
+  font-weight: ${({ data }) => (isNaN(data.slice(0, 1)) ? '100' : '800')};
   margin: 4px;
 
   @media screen and (max-width: 1427px) {
@@ -118,7 +130,7 @@ const MyPathSingle = styled(motion.div)`
   }
 
   & > p:nth-child(1) {
-    ${({ data }) => (!isNaN(data.slice(0, 1)) ? Emphasized : "")}
+    ${({ data }) => (!isNaN(data.slice(0, 1)) ? Emphasized : '')}
   }
 `;
 
@@ -141,7 +153,7 @@ export default function MyPath({ windowWidth, windowHeight }) {
   // 스크롤 관련
   const { scrollY } = useScroll();
   const [currentPath, setCurrentPath] = useState(0);
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollY, 'change', (latest) => {
     setCurrentPath(latest);
   });
 
@@ -164,19 +176,19 @@ export default function MyPath({ windowWidth, windowHeight }) {
       overPathNumber={overPathNumber}
       windowHeight={windowHeight}
       viewport={{ once: true }}
-      id="mypath"
+      id='mypath'
     >
       <div>
         <h1>
           My Path
           <LanguageChange
             whileHover={{
-              fontSize: windowHeight >= 850 ? "18px" : "14px",
+              fontSize: windowHeight >= 850 ? '18px' : '14px',
             }}
             windowHeight={windowHeight}
             onClick={() => setIsKor(!isKor)}
           >
-            {isKor ? "[ 영어로 보기 (ENG) ]" : "[ 한글로 보기 (KOR) ]"}
+            {isKor ? '[ 영어로 보기 (ENG) ]' : '[ 한글로 보기 (KOR) ]'}
           </LanguageChange>
         </h1>
         <MyPathContainer windowHeight={windowHeight}>
@@ -186,11 +198,11 @@ export default function MyPath({ windowWidth, windowHeight }) {
               <MyPathSingle
                 key={data}
                 data={data}
-                initial={{ visibility: "hidden" }}
+                initial={{ visibility: 'hidden' }}
                 animate={
                   overPathNumber
                     ? {
-                        visibility: "visible",
+                        visibility: 'visible',
                         transition: {
                           delay: (Number(idx) + 3) / 20,
                         },
@@ -200,7 +212,7 @@ export default function MyPath({ windowWidth, windowHeight }) {
               >
                 <p>{data}</p>
                 <p>
-                  <TbArrowBigDownLines color="#808080" />
+                  <TbArrowBigDownLines color='#808080' />
                 </p>
               </MyPathSingle>
             ))}
@@ -211,11 +223,11 @@ export default function MyPath({ windowWidth, windowHeight }) {
               <MyPathSingle
                 key={data}
                 data={data}
-                initial={{ visibility: "hidden" }}
+                initial={{ visibility: 'hidden' }}
                 animate={
                   overPathNumber
                     ? {
-                        visibility: "visible",
+                        visibility: 'visible',
                         transition: {
                           delay: (Number(idx) + 18) / 20,
                         },
@@ -226,9 +238,9 @@ export default function MyPath({ windowWidth, windowHeight }) {
                 <p>{data}</p>
                 <p>
                   {myPathDatas2.length - 1 === idx ? (
-                    ""
+                    ''
                   ) : (
-                    <TbArrowBigDownLines color="#808080" />
+                    <TbArrowBigDownLines color='#808080' />
                   )}
                 </p>
               </MyPathSingle>
