@@ -45,7 +45,7 @@ const Section = styled.section`
     border-radius: 12px;
   }
 
-  @media screen and (max-width: 1273px) {
+  @media screen and (max-width: 1373px) {
     font-size: var(--fontmd);
 
     & > div > p:nth-child(1) {
