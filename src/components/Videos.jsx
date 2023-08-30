@@ -61,7 +61,7 @@ const PortfolioVideo1 = styled.video`
     width: 150%;
   }
   @media screen and (max-width: 562px) {
-    top: calc(10% - 155px);
+    top: calc(10% - 125px);
   }
 `;
 
@@ -155,12 +155,14 @@ const PortfolioVideo6 = styled.video`
     left: 47%;
   }
   @media screen and (max-width: 768px) {
-    top: 110%;
-    width: 30%;
+    top: 108%;
+    width: 230px;
     left: 22px;
   }
   @media screen and (max-width: 562px) {
-    top: calc(103% - 105px);
+    top: calc(103% - 99px);
+    left: calc(70% - 110px);
+    width: 183px;
   }
 `;
 

@@ -35,7 +35,7 @@ const PortfoliosContainer = styled(motion.div)`
   }
 
   & > button {
-    width: 200px;
+    width: 220px;
     color: #fff;
     border: none;
     font-family: 'Dosis', sans-serif;
@@ -72,19 +72,7 @@ const PortfoliosContainer = styled(motion.div)`
       width: 0%;
       height: 2px;
     }
-    &:hover {
-      background: transparent;
-      box-shadow: none;
-    }
-    &:hover::before {
-      height: 100%;
-    }
-    &:hover::after {
-      width: 100%;
-    }
-    & > span:hover {
-      color: black;
-    }
+
     & > span::before,
     & > span::after {
       position: absolute;
@@ -102,19 +90,35 @@ const PortfoliosContainer = styled(motion.div)`
       width: 0%;
       height: 2px;
     }
-    & > span:hover::before {
-      height: 100%;
-    }
-    & > span:hover::after {
-      width: 100%;
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        background: transparent;
+        box-shadow: none;
+      }
+      &:hover::before {
+        height: 100%;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+      & > span:hover {
+        color: black;
+      }
+      & > span:hover::before {
+        height: 100%;
+      }
+      & > span:hover::after {
+        width: 100%;
+      }
     }
 
     @media screen and (max-width: 1024px) {
       font-size: var(--fontxxs);
     }
 
-    @media screen and (max-width: 625px) {
-      width: 120px;
+    @media screen and (max-width: 768px) {
+      width: 145px;
     }
   }
 `;
@@ -344,7 +348,7 @@ export default function Portfolios({ windowHeight, windowWidth }) {
         }}
         onClick={() => setIsKor(!isKor)}
       >
-        <span>{isKor ? '영어로 보기(ENG)' : '한글로 보기(KOR)'}</span>
+        <span>{isKor ? 'See in English (영어)' : '한글로 보기 (KOR)'}</span>
       </motion.button>
       {(isKor ? portfolioDatasKor : portfolioDatas).map((data) => {
         let selected = selectedId === data.id; // 클릭누르면 selected = true

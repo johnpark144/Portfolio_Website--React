@@ -188,7 +188,9 @@ export default function MyPath({ windowWidth, windowHeight }) {
             windowHeight={windowHeight}
             onClick={() => setIsKor(!isKor)}
           >
-            {isKor ? '[ 영어로 보기 (ENG) ]' : '[ 한글로 보기 (KOR) ]'}
+            <span>
+              [ {isKor ? 'See in English (영어)' : '한글로 보기 (KOR)'} ]
+            </span>
           </LanguageChange>
         </h1>
         <MyPathContainer windowHeight={windowHeight}>
