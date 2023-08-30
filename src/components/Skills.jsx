@@ -20,8 +20,8 @@ import {
   SiGithub,
   SiTestinglibrary,
   SiJest,
+  SiReactquery,
 } from 'react-icons/si';
-import { TbBrandReactNative } from 'react-icons/tb';
 
 // 스타일
 const Section = styled.section`
@@ -192,7 +192,7 @@ export default function Skills() {
         </span>
         <span>
           Redux(TK) <SiRedux color='#6b065e' />, React Query{' '}
-          <TbBrandReactNative color='#f31515' />,
+          <SiReactquery color='#f31515' />,
         </span>
       </TextContainer2>
       <TextContainer ref={text3Ref}>
