@@ -14,6 +14,12 @@ html, body {
   -webkit-box-sizing: border-box; 
   -moz-box-sizing: border-box; 
   box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* 스크롤 전체 */

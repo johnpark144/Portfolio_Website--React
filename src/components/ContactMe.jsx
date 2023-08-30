@@ -1,13 +1,13 @@
-import { useLayoutEffect, useRef, useState, useEffect } from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import emailjs from "@emailjs/browser";
-import { Model } from "../assets/3d/Desktop_computer";
-import { Canvas } from "@react-three/fiber";
-import { MdPhoneAndroid, MdEmail } from "react-icons/md";
-import { SiGithub } from "react-icons/si";
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import emailjs from '@emailjs/browser';
+import { Model } from '../assets/3d/Desktop_computer';
+import { Canvas } from '@react-three/fiber';
+import { MdPhoneAndroid, MdEmail } from 'react-icons/md';
+import { SiGithub } from 'react-icons/si';
 
 // 스타일
 const Section = styled.section`
@@ -20,7 +20,7 @@ const Section = styled.section`
   font-size: var(--fontlg);
   text-transform: capitalize;
   font-weight: 600;
-  font-family: "Tourney", cursive;
+  font-family: 'Tourney', cursive;
   color: #ffffff;
   overflow: visible;
   opacity: 0;
@@ -90,7 +90,7 @@ const MyInfo = styled.div`
   border-radius: 20px;
   padding: 30px;
   box-shadow: 1px 1px 10px 1px black;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 23px;
   margin: 20px;
   z-index: 99;
@@ -194,7 +194,7 @@ const Form = styled.form`
     height: 50px;
     font-size: 20px;
     color: #ffffff;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     letter-spacing: 5px;
     border: none;
@@ -280,7 +280,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
             invalidateOnRefresh: true,
           },
         })
-        .fromTo(sectionRef.current, { y: "200px" }, { y: 0, opacity: 1 });
+        .fromTo(sectionRef.current, { y: '200px' }, { y: 0, opacity: 1 });
       let t2 = gsap
         .timeline({
           scrollTrigger: {
@@ -291,31 +291,31 @@ export default function ContactMe({ windowWidth, windowHeight }) {
             scrub: 1,
           },
         })
-        .fromTo(sectionRef.current, { y: 0 }, { y: "2800px" }, "key1")
+        .fromTo(sectionRef.current, { y: 0 }, { y: '2800px' }, 'key1')
         .fromTo(
           contactMeRef.current,
           { y: 0 },
           windowWidth > 768
-            ? { y: "400px", rotateZ: 90 }
-            : { y: "500px", rotateZ: 90 },
-          "key1"
+            ? { y: '400px', rotateZ: 90 }
+            : { y: '500px', rotateZ: 90 },
+          'key1'
         )
-        .fromTo(formRef.current, { x: 0 }, { x: "20vw" }, "key1")
+        .fromTo(formRef.current, { x: 0 }, { x: '20vw' }, 'key1')
         .fromTo(
           myInfoRef.current,
           { x: 0 },
           windowWidth > 768
-            ? { x: "-300px", y: "300px", rotateZ: 90 }
-            : { x: "100px", y: "400px", rotateZ: -90 },
-          "key1"
+            ? { x: '-300px', y: '300px', rotateZ: 90 }
+            : { x: '100px', y: '400px', rotateZ: -90 },
+          'key1'
         )
         .fromTo(
           computerRef.current,
           { x: 0 },
           windowWidth > 768
-            ? { x: "-300px", y: "-300px" }
-            : { x: "-300px", y: "300px" },
-          "key1"
+            ? { x: '-300px', y: '-300px' }
+            : { x: '-300px', y: '300px' },
+          'key1'
         );
 
       return () => {
@@ -331,7 +331,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
   const sendEmail = (e) => {
     e.preventDefault();
     let elements = gsap.utils.selector(formRef);
-    const arr = elements("div").filter((el) => el.children[1].value.length > 0); // 양식이 채워진 부분만 포함한 배열을 만듬
+    const arr = elements('div').filter((el) => el.children[1].value.length > 0); // 양식이 채워진 부분만 포함한 배열을 만듬
 
     // 하나라도 빠져있으면 메일을 보내지않음
     if (arr.length === 4) {
@@ -341,7 +341,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
 
       emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
         (result) => {
-          alert("Your Message successfully sent!");
+          alert('Your Message successfully sent!');
           window.location.reload(false);
         },
         (error) => {
@@ -351,7 +351,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
         }
       );
     } else {
-      alert("Please fill out forms without missing");
+      alert('Please fill out forms without missing');
     }
   };
 
@@ -363,35 +363,35 @@ export default function ContactMe({ windowWidth, windowHeight }) {
         <Form ref={formRef} onSubmit={sendEmail}>
           <div>
             <label>Name : </label>
-            <input type="text" name="name" placeholder="ex) Alex" />
+            <input type='text' name='name' placeholder='ex) Alex' />
           </div>
           <div>
             <label>Email : </label>
             <input
-              type="email"
-              name="email"
-              placeholder="ex) abc123@gmail.com"
+              type='email'
+              name='email'
+              placeholder='ex) abc123@gmail.com'
             />
           </div>
           <div>
             <label>Subject : </label>
             <input
-              type="text"
-              name="subject"
+              type='text'
+              name='subject'
               placeholder="ex) What's up Yeonghwan!"
             />
           </div>
           <div>
             <label>Message : </label>
-            <textarea name="message" placeholder="ex) I want to hire you" />
+            <textarea name='message' placeholder='ex) I want to hire you' />
           </div>
           <motion.input
             whileHover={{
-              backgroundColor: "#ffffff",
-              color: "#000000",
+              backgroundColor: '#ffffff',
+              color: '#000000',
             }}
-            type="submit"
-            value="Submit"
+            type='submit'
+            value='Submit'
           />
         </Form>
         <div>

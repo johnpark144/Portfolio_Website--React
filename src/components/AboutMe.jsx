@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import certificate from "../assets/images/certificate.jpg";
-import lottieJson from "../assets/json/rocket.json";
-import Lottie from "react-lottie-player";
-import ScrollOut from "scroll-out";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import certificate from '../assets/images/certificate.jpg';
+import lottieJson from '../assets/json/rocket.json';
+import Lottie from 'react-lottie-player';
+import ScrollOut from 'scroll-out';
 
 // 스타일
 const AboutMeContainer = styled.section`
@@ -14,7 +14,7 @@ const AboutMeContainer = styled.section`
   height: 800px;
 
   display: flex;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   overflow: visible;
 
   @media screen and (max-width: 1024px) {
@@ -34,29 +34,29 @@ const AboutMeMessage = styled(motion.div)`
   max-height: 79%;
   background-color: var(--navy);
   padding: ${({ windowHeight }) =>
-    windowHeight > 597 ? "10px 80px 10px 80px" : "6px 50px"};
-  letter-spacing: ${({ windowHeight }) => (windowHeight > 597 ? "5px" : "3px")};
-  line-height: ${({ windowHeight }) => (windowHeight > 597 ? "40px" : "32px")};
+    windowHeight > 597 ? '10px 80px 10px 80px' : '6px 50px'};
+  letter-spacing: ${({ windowHeight }) => (windowHeight > 597 ? '5px' : '3px')};
+  line-height: ${({ windowHeight }) => (windowHeight > 597 ? '40px' : '32px')};
   box-shadow: 1px 1px 10px 1px black;
   overflow-y: hidden;
-  font-size: ${({ windowHeight }) => (windowHeight > 597 ? "16px" : "14px")};
+  font-size: ${({ windowHeight }) => (windowHeight > 597 ? '16px' : '14px')};
 
   @media screen and (max-width: 1427px) {
     line-height: ${({ windowHeight }) =>
-      windowHeight > 597 ? "32px" : "30px"};
+      windowHeight > 597 ? '32px' : '30px'};
   }
 
   @media screen and (max-width: 1024px) {
-    font-size: ${({ windowHeight }) => (windowHeight > 597 ? "14px" : "12px")};
+    font-size: ${({ windowHeight }) => (windowHeight > 597 ? '14px' : '12px')};
     padding: ${({ windowHeight }) =>
-      windowHeight > 597 ? "6px 50px" : "2px 50px"};
+      windowHeight > 597 ? '6px 50px' : '2px 50px'};
     letter-spacing: 3px;
     line-height: ${({ windowHeight }) =>
-      windowHeight > 597 ? "30px" : "25px"};
+      windowHeight > 597 ? '30px' : '25px'};
   }
 
   @media screen and (max-width: 768px) {
-    font-size: ${({ windowHeight }) => (windowHeight > 597 ? "12px" : "10px")};
+    font-size: ${({ windowHeight }) => (windowHeight > 597 ? '12px' : '10px')};
     line-height: 25px;
   }
 
@@ -125,7 +125,7 @@ const CertificateImg = styled(motion.img)`
   border-radius: 10px;
 
   @media screen and (max-width: 1579px) {
-    top: ${({ windowHeight }) => (windowHeight > 597 ? "400px" : "320px")};
+    top: ${({ windowHeight }) => (windowHeight > 597 ? '400px' : '320px')};
   }
 
   @media screen and (max-width: 768px) {
@@ -174,22 +174,23 @@ export default function AboutMe({ windowHeight }) {
     <AboutMeContainer>
       {/* 내 소개 */}
       <AboutMeMessage
-        initial={{ visibility: "hidden" }} // opacity는 data-scroll이 써야되서 visibility로 감춤
-        animate={{ visibility: "visible" }}
+        initial={{ visibility: 'hidden' }} // opacity는 data-scroll이 써야되서 visibility로 감춤
+        animate={{ visibility: 'visible' }}
         windowHeight={windowHeight}
         data-scroll
       >
-        <Title>- Introduce</Title>
+        <Title> 👋 Introduce</Title>
         <Message>
-          HI I am Yeonghwan Park, I am self-taught front-developer who are
-          aiming for fullstack-developer
+          Hi! I am a front-end developer who is being developed and developing
+          as a full-stack developer.
         </Message>
-        <Title>- Education</Title>
+        <Title> 📖 Education</Title>
         <Message>* Robotics - Yangyoung Digital High school</Message>
         <Message>* IT Media - Shingu College (1yr)</Message>
         <Message>* Meta Front end Developer Professional Certificate</Message>
+        <Message>* Redux, NextJs, Jest, React Natve Certificate</Message>
         <CertificateImg src={certificate} windowHeight={windowHeight} />
-        <Title>- Contact Details</Title>
+        <Title> ☎ Contact Details</Title>
         <Message>+82 010 9126 4842</Message>
         <Message>vyckd354@gmail.com</Message>
       </AboutMeMessage>
@@ -207,10 +208,10 @@ export default function AboutMe({ windowHeight }) {
                   duration: 2.5,
                 },
               }
-            : ""
+            : ''
         }
       >
-        <RocketClick>{!shoot ? "Click" : ""}</RocketClick>
+        <RocketClick>{!shoot ? 'Click' : ''}</RocketClick>
         <Lottie
           loop
           animationData={lottieJson}

@@ -1,13 +1,1 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&family=Raleway:wght@500&family=Tourney:wght@200&display=swap');
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}

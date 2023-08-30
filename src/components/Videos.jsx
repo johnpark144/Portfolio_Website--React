@@ -25,7 +25,7 @@ const ForYouBusy = styled.h1`
   position: absolute;
   top: 35px;
   font-family: 'Raleway', sans-serif;
-  color: #c9c8ff;
+  color: #e1e3fd;
   font-size: var(--fontxl);
   z-index: 2;
 
