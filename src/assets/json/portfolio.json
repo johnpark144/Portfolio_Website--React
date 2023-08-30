@@ -1,25 +1,6 @@
 [
     {
         "id":0,
-        "cover":"https://user-images.githubusercontent.com/106279616/219403814-8c0b191d-b018-453e-ae8b-bf70a7adfaa9.png",
-        "title":"Facebook clone",
-        "tools":["Django","Python","Html","CSS","Bootstrap","Jquery","Beautifulsoup"],
-        "loginMust": "O (Sign-up)",
-        "idea_clone":["10% (Crawling with Beautifulsoup and making News)", "90% (some of Instagram tutorial code and referance to Facebook UI, UX)"],
-        "ratio":[10,90],
-        "function":["Navbar", "Feed", "Feed upload (text, pic, text and pic)","Feed like (likeicon, likecount)","Comment","Comment like","Comment's comment","Feed modify","Feed delete (data delete)","Feed hide (data exist)","Feed share","News (Beautiful soup(realtime news)","News Search","Login, Logout, Signup"],
-        "nameWhy": null,
-        "hardPart":[
-            "while implementing likes-function, I used to fix 'model' file many time, as many 'MVC' developers well know, model file is very sensitive since it's about Database, one day in the middle of deleting and migrating datas back and force, 'migrate' was not working at all in error 'no such table', so it makes me wasting a lot of time, thankfuly I've got the solution which is 'py manage.py migrate --run-syncdb' that makes Datebase table once again, I don't know if it is difficult error to django developer or not, but back then I found it hard as I made it as 1st self-project without any help from others.",
-            "basically Django and Jquery are not for SPA, so it was really hard to conceive all the logics to implement 'likes number' that is changed in real time without moving on different page, so I did legwork going thru all the trials and errors repetively comparing likes-numbers that is input in real time and that is saved in database.",
-            "while implementing auth part and saving user-info in Database, I continually failed to log in since encrypted-password and input-password were not matched, but I found that if I use formdata-method when password datas is sent from client to server with encryption, that password is manipulated to totaly diferent one that doesn't recognize encryption. so I used it to Json-method plus insted of using ajax, I used just form tag to send to server so I came to solve the error. it took me almost entire 2 days to find solution."],
-        "thingsToFix": "need to get this clean code, better English-comment's grammer, replace success, error, complete in ajax about 'console log'.",
-        "description":"This is Facebook clone page that I built by refering to orginal Facebook web site.",
-        "url":null,
-        "githubUrl":"https://github.com/johnpark144/Facebook_clone_project--Django"
-    },
-    {
-        "id":1,
         "cover":"https://user-images.githubusercontent.com/106279616/219403876-61877351-916f-44b1-84fd-b2c8a5ed78ee.png",
         "title":"MYabc",
         "tools":["React","JavaScript","CSS","Tailwind","FireBase","RTL","Jest","Cypress","Dictionary API","Youglish API","Grammarly API","PhotoShop"],
@@ -38,6 +19,26 @@
         "githubUrl":"https://github.com/johnpark144/MYabc_project--React_FireBase"
     },
     {
+        "id":1,
+        "cover":"https://user-images.githubusercontent.com/106279616/264341947-8af8eeaf-2147-46ff-9121-ca2f2f9e337b.png",
+        "title":"MYabc (with ReactNative)",
+        "tools":["ReactNative","Expo","TypeScript","Tailwind","FireBase","Dictionary API"],
+        "loginMust": "O (Sign-up or Oauth)",
+        "idea_clone":["85%", "15% (referance to Vocabulary part)"],
+        "ratio":[85,15],
+        "function":["Splash Screen","Responsive App","Login, Logout, Signup","Login with Google, GitHub, FaceBook (Oauth)","Navigation Tab bar","Carousel","Linking to Web Version","PlaceHolder Loading","Add and Remove Days","Add and Remove Words","Hide and Show Words (to memorize vocabulary)","Gray row (When memorized words)","Move link day to day","Eng/Eng Dictionary","Web View (Video, Grammar)","Save word watching video","Move button's location with touch"],
+        "nameWhy": "'ABC' is begining of Alphabet but that sometimes indicate begining of English study so I named it MYabc.",
+        "hardPart":[
+            "Whlile using firebase with React Native, I realize the way to handle the OAuth for login is totally different from creating web site with regular React. so I've researched hard to work it out in the middle of project, and after all I solved it and applied these in my app.",
+            "Whenever I try to delete 'Day', sometime it worked well but sometime an error happened, but It turned out that whenever the data is not ready in async and I try to delete, the error came out. So In stead of having the process as loading, I set datas to delete even from 'home' page and deliver it to 'delete Day' modal thru 'Context API' in order to buy time.",
+            "While I was implementing 'video' and 'Grammar' part, I found it hard because The APIs that I used for these parts of website are only for Website not for Application, so I replaced these with WebView",
+            "Creating this app, I faced so many difference between Android and Ios, There are something not available in certain OS or Although both are available, but the scale, degree and range of it are so different. so I did cross-browsing comparing these two OS to apply better solutions and UI for each OS."],
+        "thingsToFix": "Funtionality for word to be edited, introducing Swr or React query, optimization for Images, shortening the codes in 'AuthContext'",
+        "description":"This is English study app named 'MYabc' that I built to study with vocablary to memrize, dictionary, video and grammar. When I came to states for the first time, I found it hard to do everything due to language barrier. I remember how my English get improved going through many trials and errors, that is studying context of frequent word and sentences, and also checking meaning of words in English was helpfull a lot to feel the true meaning, that's why I used to use Eng/Eng Dictionary and Youglish site in bookmark in actuality. retrospecting that time, I came to think that would be good to develop the website or application for English study based on my experience. and put them into practice. And I've already made the 'MYabc' website, and I've made an application using React Native that has the same backend server with the website.",
+        "url":null,
+        "githubUrl":"https://github.com/johnpark144/MYabc_project--ReactNative"
+    },
+    {
         "id":2,
         "cover":"https://user-images.githubusercontent.com/106279616/219403907-3a676f69-acba-41d0-97cc-40da712e5f29.png",
         "title":"Stillsteal (Ecommerce)",
@@ -45,7 +46,7 @@
         "loginMust": "X (But There is function of auth)",
         "idea_clone":["75%", "25% (referance to how other ecommerce sites look like and what function exist)"],
         "ratio":[75,25],
-        "function":["Responsive Website","Login, Logout, Signup (you can also use without login)","TokenRefresh with JWT","Navigation bar and Navigation side bar","Add to cart, subtract from cart","Search","Past-searchlist(Local Storage) and delete","See cart in Product detail, Checkout, Cart in deferent form","Pagination","Number of posts to display per page","Possible with Sort by 1, 2, 3 beleow together","1 Sort by category","2 Sort by Price(lowest), Price(highest), Name(ASC), Name(DESC), Rate","3 Sort only less than certain price","Product detail","Checkout(no payment yet)","Image Animation and design (Home-product, AboutUs, sidebar)","Spinner Loading until Data is found"],
+        "function":["Responsive Website","Login, Logout, Signup (you can also use without login)","TokenRefresh with JWT","Navigation bar and Navigation side bar","Add to cart, subtract from cart","Search","Past-searchlist(Local Storage) and delete","See cart in Product detail, Checkout, Cart in deferent form","Pagination","Number of posts to display per page","Possible with Sort by 1, 2, 3 beleow together","1 Sort by category","2 Sort by Price(lowest), Price(highest), Name(ASC), Name(DESC), Rate","3 Sort only less than certain price","Product detail","Checkout(no payment yet)","Image Animation and design (Home-product, AboutUs, sidebar)","Image sprite(AboutUs)","Spinner Loading until Data is found"],
         "nameWhy": "the reason why I named this site 'Stillsteal' is because when we see some nice product for the price, we say 'that's steal!', so in order to stress those are cheap always, I named 'stillsteal'.",
         "hardPart":[
             "While implementing Cart function, I realized 'Local storage' is needed, It was first time using that so I had a hard time with that at that time, especially Whenever I refresh the page, the storage was gone, It was because of typos on '[]', but now thankfuly I got used to it pretty much.",
@@ -94,6 +95,24 @@
         "githubUrl":"https://github.com/johnpark144/DoorToDoor_project--Nextjs_FireBase_TS"
     },{
         "id":5,
+        "cover":"https://user-images.githubusercontent.com/106279616/219403814-8c0b191d-b018-453e-ae8b-bf70a7adfaa9.png",
+        "title":"Facebook clone",
+        "tools":["Django","Python","Html","CSS","Bootstrap","Jquery","Beautifulsoup"],
+        "loginMust": "O (Sign-up)",
+        "idea_clone":["10% (Crawling with Beautifulsoup and making News)", "90% (some of Instagram tutorial code and referance to Facebook UI, UX)"],
+        "ratio":[10,90],
+        "function":["Navbar", "Feed", "Feed upload (text, pic, text and pic)","Feed like (likeicon, likecount)","Comment","Comment like","Comment's comment","Feed modify","Feed delete (data delete)","Feed hide (data exist)","Feed share","News (Beautiful soup(realtime news)","News Search","Login, Logout, Signup"],
+        "nameWhy": null,
+        "hardPart":[
+            "while implementing likes-function, I used to fix 'model' file many time, as many 'MVC' developers well know, model file is very sensitive since it's about Database, one day in the middle of deleting and migrating datas back and force, 'migrate' was not working at all in error 'no such table', so it makes me wasting a lot of time, thankfuly I've got the solution which is 'py manage.py migrate --run-syncdb' that makes Datebase table once again, I don't know if it is difficult error to django developer or not, but back then I found it hard as I made it as 1st self-project without any help from others.",
+            "basically Django and Jquery are not for SPA, so it was really hard to conceive all the logics to implement 'likes number' that is changed in real time without moving on different page, so I did legwork going thru all the trials and errors repetively comparing likes-numbers that is input in real time and that is saved in database.",
+            "while implementing auth part and saving user-info in Database, I continually failed to log in since encrypted-password and input-password were not matched, but I found that if I use formdata-method when password datas is sent from client to server with encryption, that password is manipulated to totaly diferent one that doesn't recognize encryption. so I used it to Json-method plus insted of using ajax, I used just form tag to send to server so I came to solve the error. it took me almost entire 2 days to find solution."],
+        "thingsToFix": "need to get this clean code, better English-comment's grammer, replace success, error, complete in ajax about 'console log'.",
+        "description":"This is Facebook clone page that I built by refering to orginal Facebook web site.",
+        "url":null,
+        "githubUrl":"https://github.com/johnpark144/Facebook_clone_project--Django"
+    },{
+        "id":6,
         "cover":"https://user-images.githubusercontent.com/106279616/222976680-c2526718-53ef-473d-91e0-9bb7c46f5961.png",
         "title":"Yeonghwan's Portfolio",
         "tools":["React","JavaScript","CSS","Styled-components","Vite","Framer-motion","Gsap","react-three","React-lottie-player","Scroll-out","react-chartjs-2","emailjs","PhotoShop","Pigma"],
