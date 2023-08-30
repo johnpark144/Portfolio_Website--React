@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import styled, { css } from "styled-components";
-import PortfoliosChart from "./PortfoliosChart";
-import PortfoliosTools from "./PortfoliosTools";
-import portfolioDatas from "../assets/json/portfolio.json";
-import portfolioDatasKor from "../assets/json/portfolio_Kor.json";
-import { SlClose } from "react-icons/sl";
-import { BsGithub, BsLink } from "react-icons/bs";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import styled, { css } from 'styled-components';
+import PortfoliosChart from './PortfoliosChart';
+import PortfoliosTools from './PortfoliosTools';
+import portfolioDatas from '../assets/json/portfolio.json';
+import portfolioDatasKor from '../assets/json/portfolio_Kor.json';
+import { SlClose } from 'react-icons/sl';
+import { BsGithub, BsLink } from 'react-icons/bs';
 
 //  스타일
 const PortfoliosContainer = styled(motion.div)`
@@ -15,7 +15,7 @@ const PortfoliosContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   overflow: visible;
 
   & > h1 {
@@ -35,28 +35,86 @@ const PortfoliosContainer = styled(motion.div)`
   }
 
   & > button {
-    font-size: var(--fontxs);
-    height: 40px;
-    margin: 10px;
-    padding: 0px 8px;
-    font-weight: 600;
-    background-color: #b4dbe0;
-    border-radius: 20px;
-    text-align: center;
-    border-color: transparent;
+    width: 200px;
+    color: #fff;
+    border: none;
+    font-family: 'Dosis', sans-serif;
+    border-radius: 5px;
     cursor: pointer;
-    overflow: visible;
-    text-decoration: none;
-    color: black;
-    box-shadow: 1px 1px 5px 2px #4a676b;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+    background: linear-gradient(90deg, #003268 0%, #0078b6 100%);
+    line-height: 52px;
+
+    & > span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      right: 0;
+      top: 0;
+      background: black;
+      transition: all 0.3s ease;
+    }
+    &::before {
+      height: 0%;
+      width: 2px;
+    }
+    &::after {
+      width: 0%;
+      height: 2px;
+    }
+    &:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+    &:hover::before {
+      height: 100%;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    & > span:hover {
+      color: black;
+    }
+    & > span::before,
+    & > span::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      background: black;
+      transition: all 0.3s ease;
+    }
+    & > span::before {
+      width: 2px;
+      height: 0%;
+    }
+    & > span::after {
+      width: 0%;
+      height: 2px;
+    }
+    & > span:hover::before {
+      height: 100%;
+    }
+    & > span:hover::after {
+      width: 100%;
+    }
 
     @media screen and (max-width: 1024px) {
       font-size: var(--fontxxs);
     }
 
-    @media screen and (max-width: 768px) {
-      height: 30px;
-      margin: 7px;
+    @media screen and (max-width: 625px) {
+      width: 120px;
     }
   }
 `;
@@ -78,7 +136,7 @@ const Portfolio = styled(motion.div)`
   overflow-y: hidden;
   z-index: 9999;
 
-  ${({ layoutId }) => (Number(layoutId) % 2 === 0 ? RowReverse : "")}
+  ${({ layoutId }) => (Number(layoutId) % 2 === 0 ? RowReverse : '')}
 
   & > span:nth-child(1) {
     width: 80%;
@@ -97,7 +155,7 @@ const Portfolio = styled(motion.div)`
     flex-direction: column;
     height: 600px;
     padding: 10px 30px 10px 30px;
-    overflow-y: ${({ selected }) => (selected ? "auto" : "none")};
+    overflow-y: ${({ selected }) => (selected ? 'auto' : 'none')};
 
     & > span:nth-child(1) {
       width: 100%;
@@ -195,9 +253,9 @@ const ImgWebsite = styled(motion.span)`
   }
 
   @media screen and (max-width: 625px) {
-    position: ${({ selected }) => (selected ? "absolute" : "")};
-    bottom: ${({ selected }) => (selected ? 0 : "")};
-    height: ${({ selected }) => (selected ? "130px" : "100%")};
+    position: ${({ selected }) => (selected ? 'absolute' : '')};
+    bottom: ${({ selected }) => (selected ? 0 : '')};
+    height: ${({ selected }) => (selected ? '130px' : '100%')};
   }
 `;
 
@@ -286,7 +344,7 @@ export default function Portfolios({ windowHeight, windowWidth }) {
         }}
         onClick={() => setIsKor(!isKor)}
       >
-        {isKor ? "영어로 보기(ENG)" : "한글로 보기(KOR)"}
+        <span>{isKor ? '영어로 보기(ENG)' : '한글로 보기(KOR)'}</span>
       </motion.button>
       {(isKor ? portfolioDatasKor : portfolioDatas).map((data) => {
         let selected = selectedId === data.id; // 클릭누르면 selected = true
@@ -305,22 +363,22 @@ export default function Portfolios({ windowHeight, windowWidth }) {
             whileInView={
               selected
                 ? {
-                    position: "relative",
+                    position: 'relative',
                     top: 0,
                     zIndex: 99999,
-                    backgroundColor: "#81aec9",
-                    width: "85%",
-                    height: windowWidth > 625 ? "88vh" : "55vh",
+                    backgroundColor: '#81aec9',
+                    width: '85%',
+                    height: windowWidth > 625 ? '88vh' : '55vh',
                     opacity: 1,
                     x: 0,
-                    lineHeight: "50px",
+                    lineHeight: '50px',
                     transition: { duration: 0.5 },
                   }
                 : {
                     opacity: 1,
                     x: 0,
-                    height: "41vh",
-                    cursor: "pointer",
+                    height: '41vh',
+                    cursor: 'pointer',
                   }
             }
             whileHover={
@@ -337,8 +395,8 @@ export default function Portfolios({ windowHeight, windowWidth }) {
               style={
                 selected
                   ? windowWidth > 480
-                    ? { height: "100vh" }
-                    : { height: "40vh" }
+                    ? { height: '100vh' }
+                    : { height: '40vh' }
                   : {}
               }
             >
@@ -351,19 +409,19 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                         transition: { delay: 0.3, duration: 1 },
                       }
                     : {
-                        fontSize: "31px",
+                        fontSize: '31px',
                       }
                 }
                 viewport={{ once: true }}
               >
                 <p>{data.title}</p>
                 <p>
-                  {isKor ? "로그인 필수 ?" : "LoginMust ?"} : {data.loginMust}
+                  {isKor ? '로그인 필수 ?' : 'LoginMust ?'} : {data.loginMust}
                 </p>
               </Title>
               {/* 사용한 기술 */}
               <Tools>
-                <b>{isKor ? "도구" : "Tools"}</b> :
+                <b>{isKor ? '도구' : 'Tools'}</b> :
                 {data.tools
                   .slice(0, selected ? data.tools.length : 7) // 미리보기: 7개만, 클릭한경우: 전체
                   .map((tool, idx) => (
@@ -373,7 +431,7 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                       idx={idx}
                       selected={selected}
                     />
-                  ))}{" "}
+                  ))}{' '}
                 etc...
               </Tools>
               {/* 클릭한경우 상세내용 */}
@@ -381,37 +439,37 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                 <Contents>
                   <br />
                   {/* Description  */}
-                  <b>{isKor ? "설명" : "Description"}</b> : {data?.description}{" "}
+                  <b>{isKor ? '설명' : 'Description'}</b> : {data?.description}{' '}
                   <br />
                   <br />
                   {/* Function */}
-                  <b>{isKor ? "기능" : "Function"}</b> :
+                  <b>{isKor ? '기능' : 'Function'}</b> :
                   {data?.function?.map((func) => (
                     <div key={func}>
                       <br />- {func}
                     </div>
-                  )) || " X"}{" "}
+                  )) || ' X'}{' '}
                   <br />
                   <br />
                   {/* Name Why  */}
-                  <b>{isKor ? "이름의 의미" : "Name Why ?"}</b> :
-                  {data?.nameWhy || " X"} <br /> <br />
+                  <b>{isKor ? '이름의 의미' : 'Name Why ?'}</b> :
+                  {data?.nameWhy || ' X'} <br /> <br />
                   {/* HardPart  */}
-                  <b>{isKor ? "어려웠던 점" : "Hard Part"}</b> :<br />
+                  <b>{isKor ? '어려웠던 점' : 'Hard Part'}</b> :<br />
                   {data?.hardPart?.map((hardPart, idx) => (
                     <>
-                      <span style={{ color: "#990a0a" }}> {idx + 1} -</span>{" "}
+                      <span style={{ color: '#990a0a' }}> {idx + 1} -</span>{' '}
                       {hardPart}
                       <br />
                     </>
-                  ))}{" "}
+                  ))}{' '}
                   <br />
                   {/* Things To Fix  */}
-                  <b>{isKor ? "개선해야 할 점" : "Things To Fix"}</b> :
+                  <b>{isKor ? '개선해야 할 점' : 'Things To Fix'}</b> :
                   {data?.thingsToFix} <br />
                 </Contents>
               ) : (
-                ""
+                ''
               )}
               {/* 차트 */}
               <PortfoliosChart
@@ -448,10 +506,10 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                     href={data.url}
                     style={
                       !data.url
-                        ? { pointerEvents: "none", color: "#999999" }
+                        ? { pointerEvents: 'none', color: '#999999' }
                         : {}
                     }
-                    target="_blank"
+                    target='_blank'
                   >
                     Website <BsLink />
                   </motion.a>
@@ -464,13 +522,13 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                       scale: 0.8,
                     }}
                     href={data.githubUrl}
-                    target="_blank"
+                    target='_blank'
                   >
                     Github <BsGithub />
                   </motion.a>
                 </WebsiteLink>
               ) : (
-                ""
+                ''
               )}
             </ImgWebsite>
             {/* 닫기 버튼 */}
@@ -481,7 +539,7 @@ export default function Portfolios({ windowHeight, windowWidth }) {
                 }}
               />
             ) : (
-              ""
+              ''
             )}
           </Portfolio>
         );
