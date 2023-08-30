@@ -22,7 +22,7 @@ const PortfolioContainer = styled.div`
 `;
 
 function App() {
-  const [showBallEffect, setShowBallEffect] = useState(false);
+  const [showBallEffect, setShowBallEffect] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
