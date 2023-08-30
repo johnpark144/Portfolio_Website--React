@@ -1,5 +1,5 @@
 # Portfolio_Website--React
-- 웹사이트 링크 : https://yeonghwanportfolio.netlify.app/
+- 웹사이트 링크 : https://yeonghwan-portfolio.netlify.app
 
 - 만든이 : 박영환(John Park)
 - 주요 도구 : React
