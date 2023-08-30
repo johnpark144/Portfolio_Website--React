@@ -1,7 +1,7 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import styled from "styled-components";
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import styled from 'styled-components';
 import {
   SiPython,
   SiDjango,
@@ -20,8 +20,8 @@ import {
   SiGithub,
   SiTestinglibrary,
   SiJest,
-} from "react-icons/si";
-import { TbBrandReactNative } from "react-icons/tb";
+} from 'react-icons/si';
+import { TbBrandReactNative } from 'react-icons/tb';
 
 // 스타일
 const Section = styled.section`
@@ -33,7 +33,7 @@ const Section = styled.section`
   font-size: var(--fontlg);
   text-transform: capitalize;
   font-weight: 600;
-  font-family: "Tourney", cursive;
+  font-family: 'Tourney', cursive;
   overflow: visible;
 
   & > div > p:nth-child(1) {
@@ -56,6 +56,10 @@ const Section = styled.section`
 
   @media screen and (max-width: 768px) {
     font-size: var(--fontsm);
+  }
+
+  @media screen and (max-width: 415px) {
+    font-size: var(--fontxs);
   }
 `;
 
@@ -128,34 +132,34 @@ export default function Skills() {
       .timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top-=500 top",
-          end: "bottom-=300 top",
+          start: 'top-=500 top',
+          end: 'bottom-=300 top',
           scrub: 1, // 부드럽게 스크러빙, 1초가 걸립니다.
         },
       })
       .fromTo(
         text1Ref.current,
-        { x: "-10%", y: "40%" },
-        { x: "10%", y: "-40%" },
-        "key1"
+        { x: '-10%', y: '40%' },
+        { x: '10%', y: '-40%' },
+        'key1'
       )
       .fromTo(
         text2Ref.current,
-        { x: "30%", y: "80%" },
-        { x: "-20%", y: "-85%" },
-        "key1"
+        { x: '30%', y: '80%' },
+        { x: '-20%', y: '-85%' },
+        'key1'
       )
       .fromTo(
         text3Ref.current,
-        { x: 0, y: "-162%" },
-        { x: "10%", y: "10%" },
-        "key1"
+        { x: 0, y: '-162%' },
+        { x: '10%', y: '10%' },
+        'key1'
       )
       .fromTo(
         text4Ref.current,
-        { x: "10%", y: "400%" },
-        { x: "-10%", y: "-400%" },
-        "key1"
+        { x: '10%', y: '400%' },
+        { x: '-10%', y: '-400%' },
+        'key1'
       );
 
     return () => {
@@ -169,47 +173,47 @@ export default function Skills() {
         <p>Skills</p>
         <TextContainer>
           <span>
-            Python <SiPython color="#1028ad" />, Django{" "}
-            <SiDjango color="#0f7542" />, JavaScript{" "}
-            <SiJavascript color="#faf61f" />
-            ,&nbsp;
+            JavaScript <SiJavascript color='#faf61f' />, TypeScript{' '}
+            <SiTypescript color='#0066ff' />, Python{' '}
+            <SiPython color='#1028ad' />, &nbsp;
           </span>
           <span>
-            TypeScript <SiTypescript color="#0066ff" />, Jquery{" "}
-            <SiJquery color="#2d39e6" />,
+            Django <SiDjango color='#0f7542' />, Jquery{' '}
+            <SiJquery color='#2d39e6' />,
           </span>
         </TextContainer>
       </div>
       <TextContainer2 ref={text2Ref}>
         <span>
-          React JS <SiReact color="#15bdff" />, Next JS{" "}
-          <SiNextdotjs color="#2c2c2c" />
+          React JS <SiReact color='#15bdff' />, Next JS{' '}
+          <SiNextdotjs color='#2c2c2c' />, React Native{' '}
+          <SiReact color='#15bdff' />
           ,&nbsp;
         </span>
         <span>
-          Redux(TK) <SiRedux color="#6b065e" />, React Query{" "}
-          <TbBrandReactNative color="#f31515" />,
+          Redux(TK) <SiRedux color='#6b065e' />, React Query{' '}
+          <TbBrandReactNative color='#f31515' />,
         </span>
       </TextContainer2>
       <TextContainer ref={text3Ref}>
         <span>
-          Html <SiHtml5 color="#da1717" />, Css <SiCss3 color="#2e2bec" />
+          Html <SiHtml5 color='#da1717' />, Css <SiCss3 color='#2e2bec' />
           ,&nbsp;
         </span>
         <span>
-          Tailwind <SiTailwindcss color="#5cdfdf" />, Styled components{" "}
-          <SiStyledcomponents color="#b36583" />,
+          Tailwind <SiTailwindcss color='#5cdfdf' />, Styled components{' '}
+          <SiStyledcomponents color='#b36583' />,
         </span>
       </TextContainer>
       <TextContainer2 ref={text4Ref}>
         <span>
-          RTL <SiTestinglibrary color="#af0d0d" />, Jest{" "}
-          <SiJest color="#772f19" />
+          RTL <SiTestinglibrary color='#af0d0d' />, Jest{' '}
+          <SiJest color='#772f19' />
           ,&nbsp;
         </span>
         <span>
-          Firebase <SiFirebase color="#eca011" />, Git <SiGit color="#f51c1c" />
-          , Github <SiGithub color="#353535" />
+          Firebase <SiFirebase color='#eca011' />, Git <SiGit color='#f51c1c' />
+          , Github <SiGithub color='#353535' />
         </span>
       </TextContainer2>
     </Section>
