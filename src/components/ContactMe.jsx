@@ -103,6 +103,7 @@ const MyInfo = styled.div`
     justify-content: space-evenly;
     padding: 8px 0px;
     font-size: 32px;
+    overflow: visible;
 
     & > a:nth-child(1) {
       height: 33px;
@@ -113,13 +114,15 @@ const MyInfo = styled.div`
     }
 
     & > a:nth-child(2) {
+      height: 33px;
       color: #172fb4;
+      overflow: visible;
     }
   }
 
   @media screen and (max-width: 1024px) {
     width: 300px;
-    padding: 20px;
+    padding: 18px;
     font-size: 18px;
   }
   @media screen and (max-width: 768px) {
@@ -132,9 +135,21 @@ const MyInfo = styled.div`
     position: relative;
     left: 18px;
     font-size: 12px;
-    width: 170px;
-    height: 70px;
+    width: 180px;
+    height: 80px;
     row-gap: 0px;
+    & > h3:nth-child(3) {
+      padding: 4px 0px;
+      font-size: 22px;
+
+      & > a:nth-child(1) {
+        height: 23px;
+      }
+
+      & > a:nth-child(2) {
+        height: 23px;
+      }
+    }
   }
 `;
 
