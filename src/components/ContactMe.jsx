@@ -7,7 +7,7 @@ import emailjs from '@emailjs/browser';
 import { Model } from '../assets/3d/Desktop_computer';
 import { Canvas } from '@react-three/fiber';
 import { MdPhoneAndroid, MdEmail } from 'react-icons/md';
-import { SiGithub } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 // 스타일
 const Section = styled.section`
@@ -81,20 +81,41 @@ const Contents = styled.div`
 `;
 
 const MyInfo = styled.div`
-  width: 400px;
-  height: 130px;
+  width: 340px;
+  height: 180px;
+  row-gap: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: var(--navy);
   border-radius: 20px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 1px 1px 10px 1px black;
   font-family: 'Raleway', sans-serif;
   font-size: 23px;
   margin: 20px;
   z-index: 99;
   overflow-y: visible;
+
+  & > h3:nth-child(3) {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 0px;
+    font-size: 32px;
+
+    & > a:nth-child(1) {
+      height: 33px;
+      background-color: white;
+      overflow: visible;
+      border-radius: 20px;
+      color: #000000;
+    }
+
+    & > a:nth-child(2) {
+      color: #172fb4;
+    }
+  }
 
   @media screen and (max-width: 1024px) {
     width: 300px;
@@ -103,8 +124,9 @@ const MyInfo = styled.div`
   }
   @media screen and (max-width: 768px) {
     font-size: 14px;
-    width: 200px;
+    width: 220px;
     height: 100px;
+    row-gap: 3px;
   }
   @media screen and (max-width: 480px) {
     position: relative;
@@ -112,6 +134,7 @@ const MyInfo = styled.div`
     font-size: 12px;
     width: 170px;
     height: 70px;
+    row-gap: 0px;
   }
 `;
 
@@ -404,7 +427,20 @@ export default function ContactMe({ windowWidth, windowHeight }) {
               <MdPhoneAndroid /> +82 010-9126-4842
             </h3>
             <h3>
-              <SiGithub /> johnpark144
+              <a
+                href='https://github.com/johnpark144'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <SiGithub />
+              </a>
+              <a
+                href='https://www.linkedin.com/in/yeonghwan-park-203b73218/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <SiLinkedin />
+              </a>
             </h3>
           </MyInfo>
           {/* 3D 컴퓨터 */}
