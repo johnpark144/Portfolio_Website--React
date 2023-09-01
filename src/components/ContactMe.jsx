@@ -450,7 +450,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
                 <SiGithub />
               </a>
               <a
-                href='https://www.linkedin.com/in/yeonghwan-park-203b73218/'
+                href='https://www.linkedin.com/in/yeonghwan-park/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
