@@ -191,7 +191,7 @@ export default function AboutMe({ windowHeight }) {
         <Message>* Redux, NextJs, Jest, React Natve Certificate</Message>
         <CertificateImg src={certificate} windowHeight={windowHeight} />
         <Title> ☎ Contact Details</Title>
-        <Message>+82 010 9126 4842</Message>
+        <Message>+1 832-480-0344</Message>
         <Message>vyckd354@gmail.com</Message>
       </AboutMeMessage>
 

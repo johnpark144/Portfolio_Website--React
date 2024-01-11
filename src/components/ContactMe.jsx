@@ -439,7 +439,7 @@ export default function ContactMe({ windowWidth, windowHeight }) {
               <MdEmail /> vyckd354@gmail.com
             </h3>
             <h3>
-              <MdPhoneAndroid /> +82 010-9126-4842
+              <MdPhoneAndroid /> +1 832-480-0344
             </h3>
             <h3>
               <a
